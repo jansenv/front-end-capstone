@@ -14,7 +14,7 @@ export default () => {
 
         {
             posts.map(post => {
-                const foundedUser = users.find(u => u.id === post.userId)
+                const foundedUser = users.find(u => u.id === post.userId) || {}
                             
                 return <Post key={post.id}
                             user={foundedUser} 
