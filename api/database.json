@@ -10,8 +10,9 @@
     "posts": [
         {
             "id": 1,
+            "title": "look at my cat",
             "img": "./willy-cat.jpg",
-            "description": "my cat",
+            "description": "it's my cat",
             "code": "n/a",
             "timestamp": 123908324344,
             "topicId": 1,
