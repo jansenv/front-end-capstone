@@ -1,14 +1,12 @@
 import React, { useContext } from "react"
 import "./CSSPosts.css"
 import CSSPosts from "./CSSPosts"
-import { PostContext } from "../general/PostProvider"
+import { PostContext } from "../#general/PostProvider"
 
 export default () => {
     const { posts } = useContext(PostContext)
 
     const filteredPosts = posts.filter(post => post.topicId === 2)
-
-    console.log(filteredPosts)
 
     return (
         <div className="posts">
