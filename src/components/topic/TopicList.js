@@ -8,6 +8,8 @@ export default () => {
 
     return (
         <div className="topics">
+            <h2>Topics</h2>
+
         {
             topics.map(top => <Topic key={top.id} topic={top} />)
         }
