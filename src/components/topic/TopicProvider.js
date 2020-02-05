@@ -11,7 +11,7 @@ export const TopicProvider = (props) => {
             .then(setTopics)
     }
 
-    const addTopic = post => {
+    const addTopic = topic => {
         return fetch("http://localhost:8088/topics", {
             method: "POST",
             headers: {
