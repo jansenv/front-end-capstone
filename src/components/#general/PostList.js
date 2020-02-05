@@ -8,7 +8,7 @@ export default () => {
 
     return (
         <div className="posts">
-            <h2>Posts in #general</h2>
+            <h2>All posts</h2>
 
         {
             posts.map(post => <Post key={post.id} post={post} />)
