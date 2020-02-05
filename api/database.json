@@ -1,0 +1,35 @@
+{
+    "users": [
+        {
+            "id": 1,
+            "username": "SingingWilly",
+            "password": "123",
+            "email": "w@m.com"
+        }
+    ],
+    "posts": [
+        {
+            "id": 1,
+            "img": "./willy-cat.jpg",
+            "description": "my cat",
+            "code": "n/a",
+            "timestamp": 123908324344,
+            "topicId": 1,
+            "userId": 1
+        }
+    ],
+    "topics": [
+        {
+            "id": 1,
+            "name": "General"
+        }
+    ],
+    "comments": [
+        {
+            "id": 1,
+            "text": "test",
+            "userId": 1,
+            "postId": 1
+        }
+    ]
+}
