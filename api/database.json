@@ -1,16 +1,22 @@
 {
     "users": [
         {
-            "id": 1,
-            "username": "SingingWilly",
+            "email": "w@m.com",
             "password": "123",
-            "email": "w@m.com"
+            "username": "SingingWilly",
+            "id": 1
         },
         {
-            "id": 2,
-            "username": "GrandMasterGarrett",
+            "email": "g@f.com",
             "password": "123",
-            "email": "g@f.com"
+            "username": "GrandMasterGarrett",
+            "id": 2
+        },
+        {
+            "email": "jansenv44@gmail.com",
+            "password": "123",
+            "username": "jansenv",
+            "id": 3
         }
     ],
     "posts": [

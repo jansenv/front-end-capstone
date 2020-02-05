@@ -2,14 +2,13 @@ import React, { useRef } from "react"
 import "./Login.css"
 
 const Register = props => {
-    const firstName = useRef()
-    const lastName = useRef()
+    const username = useRef()
     const email = useRef()
     const password = useRef()
     const verifyPassword = useRef()
 
     const existingUserCheck = () => {
-        return fetch(`http://localhost:8088/customers?email=${email.current.value}`)
+        return fetch(`http://localhost:8088/users?username=${username.current.value}`)
             .then(_ => _.json())
             .then(user => {
                 if (user.length) {
@@ -33,13 +32,13 @@ const Register = props => {
                         body: JSON.stringify({
                             email: email.current.value,
                             password: password.current.value,
-                            name: `${firstName.current.value} ${lastName.current.value}`
+                            username: username.current.value
                         })
                     })
                         .then(_ => _.json())
                         .then(createdUser => {
                             if (createdUser.hasOwnProperty("id")) {
-                                localStorage.setItem("kennel_customer", createdUser.id)
+                                localStorage.setItem("activeUser", createdUser.id)
                                 props.history.push("/")
                             }
                         })
@@ -52,45 +51,37 @@ const Register = props => {
     return (
         <main style={{ textAlign: "center" }}>
             <form className="form--login" onSubmit={handleRegister}>
-                <h1 className="h3 mb-3 font-weight-normal">Please Register for NSS Kennels</h1>
+                <h1 className="h3 mb-3 font-weight-normal">Please Register for CodeSnips</h1>
                 <fieldset>
-                    <label htmlFor="firstName"> First Name </label>
-                    <input ref={firstName} type="text"
-                        name="firstName"
+                    <label htmlFor="username"> username </label>
+                    <input ref={username} type="text"
+                        name="username"
                         className="form-control"
-                        placeholder="First name"
+                        placeholder="username"
                         required autoFocus />
                 </fieldset>
                 <fieldset>
-                    <label htmlFor="lastName"> Last Name </label>
-                    <input ref={lastName} type="text"
-                        name="lastName"
-                        className="form-control"
-                        placeholder="Last name"
-                        required />
-                </fieldset>
-                <fieldset>
-                    <label htmlFor="inputEmail"> Email address </label>
-                    <input ref={email} type="email"
+                    <label htmlFor="email"> e-mail </label>
+                    <input ref={email} type="text"
                         name="email"
                         className="form-control"
-                        placeholder="Email address"
+                        placeholder="email"
                         required />
                 </fieldset>
                 <fieldset>
-                    <label htmlFor="inputPassword"> Password </label>
+                    <label htmlFor="inputPassword"> password </label>
                     <input ref={password} type="password"
                         name="password"
                         className="form-control"
-                        placeholder="Password"
+                        placeholder="password"
                         required />
                 </fieldset>
                 <fieldset>
-                    <label htmlFor="verifyPassword"> Verify Password </label>
+                    <label htmlFor="verifyPassword"> verify password </label>
                     <input ref={verifyPassword} type="password"
                         name="verifyPassword"
                         className="form-control"
-                        placeholder="Verify password"
+                        placeholder="verify password"
                         required />
                 </fieldset>
                 <fieldset>
