@@ -10,7 +10,7 @@ export default () => {
 
     return (
         <div className="posts">
-            <h2>All posts</h2>
+            <h2>Posts in #pets</h2>
 
         {
             filteredPosts.map(post => <PetsPosts key={post.id} post={post} />)
