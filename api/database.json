@@ -17,7 +17,7 @@
         {
             "id": 1,
             "title": "look at my cat",
-            "img": "./willy-cat.jpg",
+            "img": "willy-cat.jpg",
             "description": "it's my cat",
             "code": "n/a",
             "timestamp": 123908324344,
@@ -27,7 +27,7 @@
         {
             "id": 2,
             "title": "cool font styling!",
-            "img": "./willy-cat.jpg",
+            "img": "font-styling.png",
             "description": "i made this",
             "code": "insert css here",
             "timestamp": 1234312412359,

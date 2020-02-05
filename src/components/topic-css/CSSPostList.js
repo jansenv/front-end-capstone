@@ -1,7 +1,7 @@
 import React, { useContext } from "react"
 import "./CSSPosts.css"
 import CSSPosts from "./CSSPosts"
-import { PostContext } from "../#general/PostProvider"
+import { PostContext } from "../topic-general/PostProvider"
 
 export default () => {
     const { posts } = useContext(PostContext)

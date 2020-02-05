@@ -1,9 +1,9 @@
 import React from "react"
 import { Route } from "react-router-dom"
-import { PostProvider } from "./#general/PostProvider"
-import PostList from "./#general/PostList"
-import CSSPostList from "./#css/CSSPostList"
-import PetsPostList from "./#pets/PetsPostList"
+import PostList from "./topic-general/PostList"
+import CSSPostList from "./topic-css/CSSPostList"
+import PetsPostList from "./topic-pets/PetsPostList"
+import { PostProvider } from "./topic-general/PostProvider"
 
 export default (props) => {
     return (
