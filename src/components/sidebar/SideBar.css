@@ -1,0 +1,11 @@
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: left;
+}
+
+.sidebar__item {
+    flex-basis: 20%;
+    list-style-type: none;
+}
