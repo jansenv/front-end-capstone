@@ -5,6 +5,12 @@
             "username": "SingingWilly",
             "password": "123",
             "email": "w@m.com"
+        },
+        {
+            "id": 2,
+            "username": "GrandMasterGarrett",
+            "password": "123",
+            "email": "g@f.com"
         }
     ],
     "posts": [
@@ -17,20 +23,40 @@
             "timestamp": 123908324344,
             "topicId": 1,
             "userId": 1
+        },
+        {
+            "id": 2,
+            "title": "cool font styling!",
+            "img": "./willy-cat.jpg",
+            "description": "i made this",
+            "code": "insert css here",
+            "timestamp": 1234312412359,
+            "topicId": 2,
+            "userId": 2
         }
     ],
     "topics": [
         {
             "id": 1,
             "name": "General"
+        },
+        {
+            "id": 2,
+            "name": "CSS"
         }
     ],
     "comments": [
         {
             "id": 1,
-            "text": "test",
-            "userId": 1,
+            "text": "i'm mr. freshwater",
+            "userId": 2,
             "postId": 1
+        },
+        {
+            "id": 2,
+            "text": "i'm willy",
+            "userId": 1,
+            "postId": 2
         }
     ]
 }

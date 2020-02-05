@@ -6,12 +6,16 @@ import { PostContext } from "../general/PostProvider"
 export default () => {
     const { posts } = useContext(PostContext)
 
+    const filteredPosts = posts.filter(post => post.topicId === 2)
+
+    console.log(filteredPosts)
+
     return (
         <div className="posts">
             <h2>Posts in #CSS</h2>
 
         {
-            posts.map(post => <CSSPosts key={post.id} post={post} />)
+            filteredPosts.map(post => <CSSPosts key={post.id} post={post} />)
         }
         </div>
     )

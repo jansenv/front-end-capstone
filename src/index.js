@@ -1,7 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import * as serviceWorker from './serviceWorker';
+import { BrowserRouter as Router } from "react-router-dom"
 import Capstone from './components/Capstone';
 
-ReactDOM.render(<Capstone />, document.getElementById('root'));
+ReactDOM.render(
+    <Router>
+        <Capstone />
+    </Router>, document.getElementById('root'));
