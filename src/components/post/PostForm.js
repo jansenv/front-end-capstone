@@ -31,6 +31,7 @@ export default props => {
     }, [posts])
 
     const createNewPost = () => {
+        debugger
             if (editMode) {
                 updatePost({
                     title: postsArray.title,
@@ -59,17 +60,6 @@ export default props => {
     return (
         <form className="postForm">
             <h2 className="postForm__title">{editMode ? "Edit Post" : "Submit a Post"}</h2>
-            <fieldset>
-                <div className="form-group">
-                    <label htmlFor="topic">topic: </label>
-                    <input type="text" name="topic" required autoFocus className="form-control"
-                        proptype="varchar"
-                        placeholder=""
-                        defaultValue={postsArray.topicId}
-                        onChange={handleControlledInputChange}
-                    />
-                </div>
-            </fieldset>
             <fieldset>
                 <div className="form-group">
                     <label htmlFor="title">title: </label>
