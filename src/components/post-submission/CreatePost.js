@@ -1,15 +1,15 @@
-import React, { useState } from "react"
+import React, { useState, useEffect, useContext } from "react"
 import { PostContext } from "../topic-general/PostProvider"
 
 export default props => {
     const { posts, addPost, updatePost } = useContext(PostContext)
-    const [posts, setPosts] = useState({})
+    const [postsArray, setPosts] = useState({})
 
     const editMode = props.match.params.hasOwnProperty("postId")
 
     const handleControlledInputChange = (e) => {
 
-        const newPosts = Object.assign({}, posts)
+        const newPosts = Object.assign({}, postsArray)
         newPosts[e.target.name] = e.target.value
         setPosts(newPosts)
     }
@@ -25,26 +25,27 @@ export default props => {
     useEffect(() => {
         setDefaults()
     }, [posts])
-    events
+
     const createNewPost = () => {
             if (editMode) {
                 updatePost({
-                    id: posts.id,
-                    title: posts.title,
-                    description: posts.description,
-                    code: posts.code,
-                    topicId: posts.topicId,
+                    id: postsArray.id,
+                    title: postsArray.title,
+                    description: postsArray.description,
+                    code: postsArray.code,
+                    topicId: postsArray.topicId,
                     userId: parseInt(localStorage.getItem("activeUser"))
                 })
                     .then(() => props.history.push("/"))
             } else {
                 addPost({
-                  id: posts.id,
-                  title: posts.title,
-                  description: posts.description,
-                  code: posts.code,
-                  topicId: posts.topicId,
+                  id: postsArray.id,
+                  title: postsArray.title,
+                  img: postsArray.img,
+                  description: postsArray.description,
+                  code: postsArray.code,
                   timestamp: Date.now(),
+                  topicId: postsArray.topicId,
                   userId: parseInt(localStorage.getItem("activeUser"))
               })
                   .then(() => props.history.push("/"))
@@ -53,37 +54,37 @@ export default props => {
     
 
     return (
-        <form className="eventForm">
-            <h2 className="eventForm__name">{editMode ? "Edit Event" : "Add Event"}</h2>
+        <form className="postForm">
+            <h2 className="postForm__title">{editMode ? "Edit Post" : "Add Post"}</h2>
             <fieldset>
                 <div className="form-group">
-                    <label htmlFor="name">Name: </label>
-                    <input type="text" name="name" required autoFocus className="form-control"
+                    <label htmlFor="title">Title: </label>
+                    <input type="text" name="title" required autoFocus className="form-control"
                         proptype="varchar"
                         placeholder=""
-                        defaultValue={Events.name}
+                        defaultValue={postsArray.title}
                         onChange={handleControlledInputChange}
                     />
                 </div>
             </fieldset>
             <fieldset>
                 <div className="form-group">
-                    <label htmlFor="url">Location: </label>
-                    <input type="text" name="location" required className="form-control"
+                    <label htmlFor="img">image: </label>
+                    <input type="text" name="img" required className="form-control"
                         proptype="varchar"
                         placeholder=""
-                        defaultValue={Events.location}
+                        defaultValue={postsArray.img}
                         onChange={handleControlledInputChange}
                     />
                 </div>
             </fieldset>
             <fieldset>
                 <div className="form-group">
-                    <label htmlFor="timestamp">Time: </label>
+                    <label htmlFor="description">Description: </label>
                     <input type="datetime-local" name="timestamp" required className="form-control"
                         proptype="varchar"
                         placeholder=""
-                        defaultValue={Events.timestamp}
+                        defaultValue={postsArray.description}
                         onChange={handleControlledInputChange}
                     />
                 </div>
@@ -92,10 +93,10 @@ export default props => {
             <button type="submit"
                 onClick={evt => {
                     evt.preventDefault()
-                    createNewEvent()
+                    createNewPost()
                 }}
                 className="btn btn-primary">
-                {editMode ? "Save Update" : "Add Event"}
+                {editMode ? "Save Update" : "Add Post"}
             </button>
 
         </form>

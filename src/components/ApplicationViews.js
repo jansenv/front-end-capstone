@@ -5,15 +5,19 @@ import CSSPostList from "./topic-css/CSSPostList"
 import PetsPostList from "./topic-pets/PetsPostList"
 import { PostProvider } from "./topic-general/PostProvider"
 import { UserProvider } from "./users/UserProvider"
+import CreatePost from "./post-submission/CreatePost"
 
 export default (props) => {
     return (
         <>
         <UserProvider>
             <PostProvider>
-                <Route exact path="/">
-                    <PostList />
-                </Route>
+                <Route exact path="/"
+                    render={props => <PostList {...props} />}
+                />
+                <Route path="/create" 
+                    render={props => <CreatePost {...props} />}
+                />
                 <Route path="/css">
                     <CSSPostList />
                 </Route>

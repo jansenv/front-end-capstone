@@ -6,10 +6,10 @@ export default (props) => {
     return (
         <ul className="sidebar">
             <li className="sidebar__item">
-                <Link className="sidebar__link" to="/css">#css</Link>
-            </li>
             <li className="sidebar__item active">
-                <Link className="sidebar__link" to="/">#general</Link>
+                <Link className="sidebar__link" to="/">#all</Link>
+            </li>
+                <Link className="sidebar__link" to="/css">#css</Link>
             </li>
             <li className="sidebar__item">
                 <Link className="sidebar__link" to="/pets">#pets</Link>
