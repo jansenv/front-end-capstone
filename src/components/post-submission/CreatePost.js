@@ -30,7 +30,6 @@ export default props => {
     const createNewPost = () => {
             if (editMode) {
                 updatePost({
-                    id: postsArray.id,
                     title: postsArray.title,
                     description: postsArray.description,
                     code: postsArray.code,
@@ -61,15 +60,14 @@ export default props => {
                 <div className="form-group">
                     <label htmlFor="topic">topic: </label>
                     <select name="topic" 
-                        required 
                         className="form-control"
-                        placeholder=""
                         defaultValue={postsArray.topicId}
                         onChange={handleControlledInputChange}
                     >
-                        <option value="css">css</option>
-                        <option value="pets">pets</option>
-                        <option value="terminal">terminal</option>
+                        <option value="0">select an option...</option>
+                        <option value="1">css</option>
+                        <option value="2">pets</option>
+                        <option value="3">terminal</option>
                     </select>
                 </div>
             </fieldset>

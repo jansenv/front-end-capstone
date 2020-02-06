@@ -1,18 +1,30 @@
-import React from "react"
+import React, { useContext } from "react"
 import { Link } from "react-router-dom"
 import "./SideBar.css"
+import { TopicContext } from "../topic/TopicProvider"
 
 export default (props) => {
+
+    const { topics } = useContext(TopicContext)
+    
+    function ListTopics() {
+        const topicsList = topics.map(
+            topic =>
+                <li className="sidebar__item">
+                    <Link className="sidebar__link" to={`/${topic.name}`}>#{topic.name}</Link>
+                </li>
+        )
+        return topicsList
+    }
+
     return (
         <ul className="sidebar">
-            <li className="sidebar__item">
+            {ListTopics()}
             <li className="sidebar__item active">
                 <Link className="sidebar__link" to="/">#all</Link>
             </li>
-                <Link className="sidebar__link" to="/css">#css</Link>
-            </li>
             <li className="sidebar__item">
-                <Link className="sidebar__link" to="/pets">#pets</Link>
+                <Link className="sidebar__link" to="/css">#css</Link>
             </li>
             <li className="sidebar__item">
                 <Link className="sidebar__link" to="/terminal">#terminal</Link>

@@ -1,6 +1,5 @@
 import React from "react"
 import { Route, Redirect } from "react-router-dom"
-import SideBar from "./sidebar/SideBar"
 import ApplicationViews from "./ApplicationViews"
 import "./Capstone.css"
 import Register from "./auth/Register"
@@ -12,7 +11,6 @@ export default () => (
             if (localStorage.getItem("activeUser")) {
                 return (
                     <>
-                        <Route render={props => <SideBar {...props} />} />
                         <Route render={props => <ApplicationViews {...props} />} />
                     </>
                 )
