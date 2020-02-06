@@ -1,49 +1,53 @@
-import React from "react"
+import React, { useState } from "react"
+import { PostContext } from "../topic-general/PostProvider"
 
 export default props => {
-    const { events, addEvent, updateEvent } = useContext(EventContext)
-    const [Events, setEvents] = useState({})
+    const { posts, addPost, updatePost } = useContext(PostContext)
+    const [posts, setPosts] = useState({})
 
-    const editMode = props.match.params.hasOwnProperty("eventId")
+    const editMode = props.match.params.hasOwnProperty("postId")
 
     const handleControlledInputChange = (e) => {
 
-        const newEvents = Object.assign({}, Events)
-        newEvents[e.target.name] = e.target.value
-        setEvents(newEvents)
+        const newPosts = Object.assign({}, posts)
+        newPosts[e.target.name] = e.target.value
+        setPosts(newPosts)
     }
 
     const setDefaults = () => {
         if (editMode) {
-            const eventId = parseInt(props.match.params.eventId)
-            const selectedEvents = events.find(e => e.id === eventId) || {}
-            setEvents(selectedEvents)
+            const postId = parseInt(props.match.params.postId)
+            const selectedPosts = posts.find(p => p.id === postId) || {}
+            setPosts(selectedPosts)
         }
     }
 
     useEffect(() => {
         setDefaults()
-    }, [events])
-
-    const createNewEvent = () => {
+    }, [posts])
+    events
+    const createNewPost = () => {
             if (editMode) {
-                updateEvent({
-                    id: Events.id,
-                    name: Events.name,
-                    location: Events.location,
-                    timestamp: Events.timestamp,
+                updatePost({
+                    id: posts.id,
+                    title: posts.title,
+                    description: posts.description,
+                    code: posts.code,
+                    topicId: posts.topicId,
                     userId: parseInt(localStorage.getItem("activeUser"))
                 })
-                    .then(() => props.history.push("/events"))
+                    .then(() => props.history.push("/"))
             } else {
-                addEvent({
-                  id: Events.id,
-                  name: Events.name,
-                  location: Events.location,
-                  timestamp: Events.timestamp,
+                addPost({
+                  id: posts.id,
+                  title: posts.title,
+                  description: posts.description,
+                  code: posts.code,
+                  topicId: posts.topicId,
+                  timestamp: Date.now(),
                   userId: parseInt(localStorage.getItem("activeUser"))
               })
-                  .then(() => props.history.push("/events"))
+                  .then(() => props.history.push("/"))
             }
         }
     
