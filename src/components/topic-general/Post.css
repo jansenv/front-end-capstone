@@ -1,6 +1,7 @@
 .posts {
     display: flex;
     flex-direction: column;
+    margin: 0em 30em;
   }
   
   .post {
@@ -8,4 +9,8 @@
       margin: 1em;
       padding: 1em;
       border: 1px solid goldenrod;
+  }
+
+  h2 {
+      align-self: center;
   }

@@ -12,11 +12,9 @@ export default () => (
             if (localStorage.getItem("activeUser")) {
                 return (
                     <>
-                        <main>
-                            <Route render={props => <SideBar {...props} />} />
-                            <Route render={props => <ApplicationViews {...props} />} />
-                        </main>
-                    </> 
+                        <Route render={props => <SideBar {...props} />} />
+                        <Route render={props => <ApplicationViews {...props} />} />
+                    </>
                 )
             } else {
                 return <Redirect to="/login" />
