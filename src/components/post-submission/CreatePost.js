@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useContext } from "react"
-import { PostContext } from "../topic-general/PostProvider"
+import { PostContext } from "../post/PostProvider"
 import "./CreatePost.css"
 import { TopicContext } from "../topic/TopicProvider"
 

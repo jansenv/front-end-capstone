@@ -1,11 +1,10 @@
 import React from "react"
 import { Route, Link } from "react-router-dom"
-import PostList from "./topic-general/PostList"
-import { PostProvider } from "./topic-general/PostProvider"
+import PostList from "./post/PostList"
+import { PostProvider } from "./post/PostProvider"
 import { UserProvider } from "./users/UserProvider"
 import CreatePost from "./post-submission/CreatePost"
 import { TopicProvider } from "./topic/TopicProvider"
-import SideBar from "./sidebar/SideBar"
 
 export default (props) => {
     return (
@@ -13,9 +12,6 @@ export default (props) => {
             <TopicProvider>
                 <UserProvider>
                     <PostProvider>
-                        <Route
-                            render={props => <SideBar {...props} />}
-                        />
                         {
                             localStorage.getItem("activeUser")
                                 ? <p className="logout__text">
