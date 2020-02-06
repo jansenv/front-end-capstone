@@ -23,19 +23,19 @@ export default (props) => {
     function ListTopicsAlphabetically() {
         const topicsList = ABCSortedArrayOfTopicNames.map(
             topic =>
-                <li className="sidebar__item">
-                    <Link className="sidebar__link" to={`/${topic}`}>#{topic}</Link>
-                </li>
+                <button className={(`sidebar__${topic}`)}>
+                    #{topic}
+                </button>
         )
         return topicsList
     }
 
     return (
-        <ul className="sidebar">
-            <li className="sidebar__item active">
-                <Link className="sidebar__link" to="/">#all</Link>
-            </li>
+        <div className="sidebar">
+            <button className="sidebar__all">
+                #all
+            </button>
             {ListTopicsAlphabetically()}
-        </ul>
+        </div>
     )
 }

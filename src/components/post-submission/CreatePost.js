@@ -1,10 +1,13 @@
 import React, { useState, useEffect, useContext } from "react"
 import { PostContext } from "../topic-general/PostProvider"
 import "./CreatePost.css"
+import { TopicContext } from "../topic/TopicProvider"
 
 export default props => {
     const { posts, addPost, updatePost } = useContext(PostContext)
+    const { topics } = useContext(TopicContext)
     const [postsArray, setPosts] = useState({})
+    const [topicsArray, setTopics] = useState({})
 
     const editMode = props.match.params.hasOwnProperty("postId")
 
