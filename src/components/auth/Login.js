@@ -9,7 +9,7 @@ const Login = props => {
     const email = useRef()
 
     const existingUserCheck = () => {
-        return fetch(`http://localhost:8088/users?users=${username.current.value}`)
+        return fetch(`http://localhost:8088/users?username=${username.current.value}`)
             .then(_ => _.json())
             .then(user => {
                 if (user.length) {
@@ -24,6 +24,7 @@ const Login = props => {
 
         existingUserCheck()
             .then(exists => {
+                debugger
                 if (exists && exists.password === password.current.value) {
                     localStorage.setItem("activeUser", exists.id)
                     props.history.push("/")
@@ -38,7 +39,6 @@ const Login = props => {
                         body: JSON.stringify({
                             username: username.current.value,
                             password: password.current.value,
-                            email: email.current.value,
                         })
                     })
                         .then(_ => _.json())
