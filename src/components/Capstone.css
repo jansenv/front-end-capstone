@@ -32,3 +32,9 @@ strong {
 address {
   margin: 0 0 1.5em;
 }
+
+.logout__text {
+  border: 1px solid goldenrod;
+  position: fixed;
+  margin: 2em 0em 0em 100em;
+}

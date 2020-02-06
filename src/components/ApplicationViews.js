@@ -1,5 +1,5 @@
 import React from "react"
-import { Route } from "react-router-dom"
+import { Route, Link } from "react-router-dom"
 import PostList from "./topic-general/PostList"
 import CSSPostList from "./topic-css/CSSPostList"
 import PetsPostList from "./topic-pets/PetsPostList"
@@ -15,9 +15,20 @@ export default (props) => {
             <TopicProvider>
                 <UserProvider>
                     <PostProvider>
-                        <Route 
-                            render={props => <SideBar {...props} />} 
+                        <Route
+                            render={props => <SideBar {...props} />}
                         />
+                        {
+                            localStorage.getItem("activeUser")
+                                ? <p className="logout__text">
+                                    <Link className="logout__link"
+                                        to=""
+                                        onClick={e => {
+                                            e.preventDefault()
+                                            localStorage.removeItem("activeUser")
+                                            props.history.push("/")
+                                        }}>Sign Out
+                                        </Link></p>: ""}
                         <Route exact path="/"
                             render={props => <PostList {...props} />}
                         />

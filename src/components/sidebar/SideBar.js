@@ -36,20 +36,6 @@ export default (props) => {
                 <Link className="sidebar__link" to="/">#all</Link>
             </li>
             {ListTopicsAlphabetically()}
-            {
-                localStorage.getItem("activeUser")
-                    ? <li className="sidebar__item">
-                        <Link className="sidebar__link"
-                            to=""
-                            onClick={e => {
-                                e.preventDefault()
-                                localStorage.removeItem("activeUser")
-                                props.history.push("/")
-                            }}
-                        >Logout</Link>
-                    </li>
-                    : ""
-            }
         </ul>
     )
 }
