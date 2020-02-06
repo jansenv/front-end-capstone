@@ -11,17 +11,6 @@ export const TopicProvider = (props) => {
             .then(setTopics)
     }
 
-    const addTopic = topic => {
-        return fetch("http://localhost:8088/topics", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify(topic)
-        })
-            .then(getTopics)
-    }
-
     useEffect(() => {
         getTopics()
     }, [])
@@ -32,7 +21,7 @@ export const TopicProvider = (props) => {
 
     return (
         <TopicContext.Provider value={{
-            topics, addTopic
+            topics
         }}>
             {props.children}
         </TopicContext.Provider>

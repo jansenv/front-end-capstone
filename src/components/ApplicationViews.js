@@ -3,8 +3,8 @@ import { Route, Link } from "react-router-dom"
 import PostList from "./post/PostList"
 import { PostProvider } from "./post/PostProvider"
 import { UserProvider } from "./users/UserProvider"
-import CreatePost from "./post-submission/CreatePost"
 import { TopicProvider } from "./topic/TopicProvider"
+import PostForm from "./post/PostForm"
 
 export default (props) => {
     return (
@@ -27,7 +27,7 @@ export default (props) => {
                             render={props => <PostList {...props} />}
                         />
                         <Route path="/create"
-                            render={props => <CreatePost {...props} />}
+                            render={props => <PostForm {...props} />}
                         />
                     </PostProvider>
                 </UserProvider>

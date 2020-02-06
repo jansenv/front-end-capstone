@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useContext } from "react"
-import { PostContext } from "../post/PostProvider"
-import "./CreatePost.css"
+import { PostContext } from "./PostProvider"
+import "./PostForm.css"
 import { TopicContext } from "../topic/TopicProvider"
 
 export default props => {
