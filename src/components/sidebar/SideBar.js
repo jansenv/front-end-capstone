@@ -19,16 +19,10 @@ export default (props) => {
 
     return (
         <ul className="sidebar">
-            {ListTopics()}
             <li className="sidebar__item active">
                 <Link className="sidebar__link" to="/">#all</Link>
             </li>
-            <li className="sidebar__item">
-                <Link className="sidebar__link" to="/css">#css</Link>
-            </li>
-            <li className="sidebar__item">
-                <Link className="sidebar__link" to="/terminal">#terminal</Link>
-            </li>
+            {ListTopics()}
             {
                 localStorage.getItem("activeUser")
                     ? <li className="sidebar__item">
