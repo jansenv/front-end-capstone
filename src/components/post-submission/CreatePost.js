@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useContext } from "react"
 import { PostContext } from "../topic-general/PostProvider"
+import "./CreatePost.css"
 
 export default props => {
     const { posts, addPost, updatePost } = useContext(PostContext)
@@ -58,7 +59,23 @@ export default props => {
             <h2 className="postForm__title">{editMode ? "Edit Post" : "Add Post"}</h2>
             <fieldset>
                 <div className="form-group">
-                    <label htmlFor="title">Title: </label>
+                    <label htmlFor="topic">topic: </label>
+                    <select name="topic" 
+                        required 
+                        className="form-control"
+                        placeholder=""
+                        defaultValue={postsArray.topicId}
+                        onChange={handleControlledInputChange}
+                    >
+                        <option value="css">css</option>
+                        <option value="pets">pets</option>
+                        <option value="terminal">terminal</option>
+                    </select>
+                </div>
+            </fieldset>
+            <fieldset>
+                <div className="form-group">
+                    <label htmlFor="title">title: </label>
                     <input type="text" name="title" required autoFocus className="form-control"
                         proptype="varchar"
                         placeholder=""
@@ -80,11 +97,22 @@ export default props => {
             </fieldset>
             <fieldset>
                 <div className="form-group">
-                    <label htmlFor="description">Description: </label>
-                    <input type="datetime-local" name="timestamp" required className="form-control"
+                    <label htmlFor="description">description: </label>
+                    <input type="text" name="description" required className="form-control"
                         proptype="varchar"
                         placeholder=""
                         defaultValue={postsArray.description}
+                        onChange={handleControlledInputChange}
+                    />
+                </div>
+            </fieldset>
+            <fieldset>
+                <div className="form-group">
+                    <label htmlFor="code">code: </label>
+                    <input type="text" name="code" required className="form-control"
+                        proptype="varchar"
+                        placeholder=""
+                        defaultValue={postsArray.code}
                         onChange={handleControlledInputChange}
                     />
                 </div>
