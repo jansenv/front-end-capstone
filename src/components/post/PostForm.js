@@ -61,21 +61,6 @@ export default props => {
             <h2 className="postForm__title">{editMode ? "Edit Post" : "Add Post"}</h2>
             <fieldset>
                 <div className="form-group">
-                    <label htmlFor="topic">topic: </label>
-                    <select name="topic" 
-                        className="form-control"
-                        defaultValue={postsArray.topicId}
-                        onChange={handleControlledInputChange}
-                    >
-                        <option value="0">select an option...</option>
-                        <option value="1">css</option>
-                        <option value="2">pets</option>
-                        <option value="3">terminal</option>
-                    </select>
-                </div>
-            </fieldset>
-            <fieldset>
-                <div className="form-group">
                     <label htmlFor="title">title: </label>
                     <input type="text" name="title" required autoFocus className="form-control"
                         proptype="varchar"
