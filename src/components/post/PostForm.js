@@ -1,13 +1,10 @@
 import React, { useState, useEffect, useContext } from "react"
 import { PostContext } from "./PostProvider"
 import "./PostForm.css"
-import { TopicContext } from "../topic/TopicProvider"
 
 export default props => {
     const { posts, addPost, updatePost } = useContext(PostContext)
-    const { topics } = useContext(TopicContext)
     const [postsArray, setPosts] = useState({})
-    const [topicsArray, setTopics] = useState({})
 
     const editMode = props.match.params.hasOwnProperty("postId")
 
@@ -31,12 +28,16 @@ export default props => {
     }, [posts])
 
     const createNewPost = () => {
+        debugger
             if (editMode) {
                 updatePost({
+                    id: postsArray.id,
                     title: postsArray.title,
+                    img: postsArray.img,
                     description: postsArray.description,
                     code: postsArray.code,
-                    topicId: postsArray.topicId,
+                    timestamp: Date.now(),
+                    topicId: parseInt(postsArray.topic),
                     userId: parseInt(localStorage.getItem("activeUser"))
                 })
                     .then(() => props.history.push("/"))
