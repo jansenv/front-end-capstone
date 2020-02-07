@@ -28,7 +28,6 @@ export default props => {
     }, [posts])
 
     const createNewPost = () => {
-        debugger
             if (editMode) {
                 updatePost({
                     id: postsArray.id,
