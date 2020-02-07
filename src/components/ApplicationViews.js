@@ -5,6 +5,7 @@ import { PostProvider } from "./post/PostProvider"
 import { UserProvider } from "./users/UserProvider"
 import { TopicProvider } from "./topic/TopicProvider"
 import PostForm from "./post/PostForm"
+import TopicList from "./topic/TopicList"
 
 export default (props) => {
     return (
@@ -12,6 +13,7 @@ export default (props) => {
             <TopicProvider>
                 <UserProvider>
                     <PostProvider>
+                        <TopicList />
                         {
                             localStorage.getItem("activeUser")
                                 ? <p className="logout__text">
