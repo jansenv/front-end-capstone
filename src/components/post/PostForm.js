@@ -36,7 +36,7 @@ export default props => {
                     description: postsArray.description,
                     code: postsArray.code,
                     timestamp: Date.now(),
-                    topicId: parseInt(postsArray.topic),
+                    topicId: parseInt(postsArray.topicId),
                     userId: parseInt(localStorage.getItem("activeUser"))
                 })
                     .then(() => props.history.push("/"))
@@ -65,7 +65,7 @@ export default props => {
                     <input type="text" name="topic" required className="form-control"
                         proptype="varchar"
                         placeholder=""
-                        defaultValue={postsArray.topic}
+                        defaultValue={postsArray.topicId}
                         onChange={handleControlledInputChange}
                     />
                 </div>
