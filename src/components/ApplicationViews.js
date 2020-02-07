@@ -29,6 +29,9 @@ export default (props) => {
                         <Route path="/create"
                             render={props => <PostForm {...props} />}
                         />
+                        <Route path="/edit/:postId(\d+)"
+                            render={props => <PostForm {...props} />}
+                        />
                     </PostProvider>
                 </UserProvider>
             </TopicProvider>

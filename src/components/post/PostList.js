@@ -20,10 +20,7 @@ export default (props) => {
             posts.map(post => {
                 const foundedUser = users.find(u => u.id === post.userId) || {}
                             
-                return <Post key={post.id}
-                            user={foundedUser} 
-                            post={post} 
-                        />
+                return <Post key={post.id} user={foundedUser} post={post} {...props} />
             })}
         </div>
     )
