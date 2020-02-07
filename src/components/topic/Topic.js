@@ -1,13 +1,14 @@
 import React, { useContext } from "react"
 import "./Topic.css"
+import PostList from "../post/PostList"
 
 
-export default ({ history, topic }) => {
+export default ({ props, topic }) => {
 
     function RenderTopics() {
-        return <button>
-                    {topic.name}
-                </button>
+        return <button onClick={() => <PostList topic={topic.topicId} />} id={`${topic.id}`}>
+            {topic.name}
+        </button>
     }
 
     return RenderTopics()

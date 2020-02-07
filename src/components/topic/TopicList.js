@@ -2,7 +2,7 @@ import React, { useContext } from "react"
 import { TopicContext } from "./TopicProvider"
 import Topic from "./Topic"
 
-export default (props) => {
+export default () => {
     const { topics } = useContext(TopicContext)
 
     return (
@@ -11,7 +11,7 @@ export default (props) => {
 
             {
                 topics.map(topic => {
-                    return <Topic key={topic.id} topic={topic} {...props} />
+                    return <Topic key={topic.id} topic={topic} />
                 })}
         </div>
     )

@@ -1,7 +1,7 @@
 .posts {
     display: flex;
     flex-direction: column;
-    margin: 0em 30em;
+    margin: 0em 25em;
   }
   
   .post {
