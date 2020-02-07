@@ -106,12 +106,18 @@ export default props => {
             <fieldset>
                 <div className="form-group">
                     <label htmlFor="code">code: </label>
-                    <input type="text" name="code" required className="form-control"
+                    <textarea name="code" required className="form-control"
+                        proptype="varchar"
+                        placeholder=""
+                        defaultValue={postsArray.code}
+                        onChange={handleControlledInputChange}>
+                    </textarea>
+                    {/* <input type="text" name="code" required className="form-control"
                         proptype="varchar"
                         placeholder=""
                         defaultValue={postsArray.code}
                         onChange={handleControlledInputChange}
-                    />
+                    /> */}
                 </div>
             </fieldset>
 
