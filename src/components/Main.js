@@ -1,7 +1,7 @@
 import React from "react"
 import { Route, Redirect } from "react-router-dom"
 import ApplicationViews from "./ApplicationViews"
-import "./Capstone.css"
+import "./Main.css"
 import Register from "./auth/Register"
 import Login from "./auth/Login"
 

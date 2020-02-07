@@ -2,9 +2,9 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import { BrowserRouter as Router } from "react-router-dom"
-import Capstone from './components/Capstone';
+import Main from './components/Main';
 
 ReactDOM.render(
     <Router>
-        <Capstone />
+        <Main />
     </Router>, document.getElementById('root'));
