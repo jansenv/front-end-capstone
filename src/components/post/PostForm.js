@@ -112,12 +112,6 @@ export default props => {
                         defaultValue={postsArray.code}
                         onChange={handleControlledInputChange}>
                     </textarea>
-                    {/* <input type="text" name="code" required className="form-control"
-                        proptype="varchar"
-                        placeholder=""
-                        defaultValue={postsArray.code}
-                        onChange={handleControlledInputChange}
-                    /> */}
                 </div>
             </fieldset>
 
