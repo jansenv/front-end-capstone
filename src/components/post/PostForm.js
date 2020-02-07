@@ -31,7 +31,6 @@ export default props => {
     }, [posts])
 
     const createNewPost = () => {
-        debugger
             if (editMode) {
                 updatePost({
                     title: postsArray.title,
@@ -49,7 +48,7 @@ export default props => {
                   description: postsArray.description,
                   code: postsArray.code,
                   timestamp: Date.now(),
-                  topicId: postsArray.topicId,
+                  topicId: parseInt(postsArray.topic),
                   userId: parseInt(localStorage.getItem("activeUser"))
               })
                   .then(() => props.history.push("/"))
@@ -66,7 +65,7 @@ export default props => {
                     <input type="text" name="topic" required className="form-control"
                         proptype="varchar"
                         placeholder=""
-                        defaultValue={parseInt(postsArray.topicId, 10)}
+                        defaultValue={postsArray.topic}
                         onChange={handleControlledInputChange}
                     />
                 </div>
