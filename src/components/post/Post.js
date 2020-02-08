@@ -1,6 +1,7 @@
 import React, { useContext } from "react"
 import "./Post.css"
 import { PostContext } from "./PostProvider"
+import { Link } from "react-router-dom"
 
 
 export default ({ history, post, user }) => {
@@ -29,7 +30,11 @@ export default ({ history, post, user }) => {
     function RenderPosts() {
         return <section className="post">
             <img src={require(`../../images/${post.img}`)} />
-            <h3 className="post__title">{post.title}</h3>
+            <h3 className="post__title">
+                <Link to={`/${post.id}`}>
+                    {post.title}
+                </Link>
+            </h3>
             <div className="post__author">Submitted by {user.username}</div>
             {LoggedInUserButtons()}
         </section>

@@ -3,15 +3,16 @@ import "./Post.css"
 import { PostContext } from "./PostProvider"
 import Post from "./Post"
 import { UserContext } from "../users/UserProvider"
+import { TopicContext } from "../topic/TopicProvider"
 
-export default (props, topic) => {
+export default (props) => {
     const { posts } = useContext(PostContext)
+    const { topics } = useContext(TopicContext)
     const { users } = useContext(UserContext)
 
-    console.log(topic)
-
     function filterPostsByTopicId(TopicNum) {
-        return posts.filter(post => post.topicId === TopicNum)
+        return posts.filter(post => 
+            post.topicId === TopicNum)
     }
 
     function sortArrayByMostRecent(array) {

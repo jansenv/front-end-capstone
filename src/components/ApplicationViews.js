@@ -6,6 +6,7 @@ import { UserProvider } from "./users/UserProvider"
 import { TopicProvider } from "./topic/TopicProvider"
 import PostForm from "./post/PostForm"
 import TopicList from "./topic/TopicList"
+import PostDetails from "./post/PostDetails"
 
 export default (props) => {
     return (
@@ -33,6 +34,9 @@ export default (props) => {
                         />
                         <Route path="/edit/:postId(\d+)"
                             render={props => <PostForm {...props} />}
+                        />
+                        <Route path="/:postId(\d+)"
+                            render={props => <PostDetails {...props} />}
                         />
                     </PostProvider>
                 </UserProvider>
