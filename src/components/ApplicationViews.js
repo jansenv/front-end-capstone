@@ -14,7 +14,6 @@ export default (props) => {
             <TopicProvider>
                 <UserProvider>
                     <PostProvider>
-                        <TopicList />
                         {
                             localStorage.getItem("activeUser")
                                 ? <p className="logout__text">

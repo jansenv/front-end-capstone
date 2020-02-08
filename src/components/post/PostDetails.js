@@ -21,6 +21,8 @@ export default (props) => {
                 {post.title}
             </h3>
             <div className="post__author">Submitted by {user.username}</div>
+            <div className="post__description">Details: {post.description}</div>
+            <div className="post__code">Code: {post.code}</div>
         </section>
     )
 }

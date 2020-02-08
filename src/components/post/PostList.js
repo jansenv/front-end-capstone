@@ -4,6 +4,7 @@ import { PostContext } from "./PostProvider"
 import Post from "./Post"
 import { UserContext } from "../users/UserProvider"
 import { TopicContext } from "../topic/TopicProvider"
+import TopicList from "../topic/TopicList"
 
 export default (props) => {
     const { posts } = useContext(PostContext)
@@ -27,6 +28,9 @@ export default (props) => {
     
 
     return (
+        <>
+        
+        <TopicList />
         <div className="posts">
             <h2>All posts</h2>
 
@@ -41,5 +45,6 @@ export default (props) => {
                     return <Post key={post.id} user={foundedUser} post={post} {...props} />
                 })}
         </div>
+        </>
     )
 }
