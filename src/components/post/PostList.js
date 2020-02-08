@@ -7,12 +7,22 @@ import { UserContext } from "../users/UserProvider"
 export default (props, topic) => {
     const { posts } = useContext(PostContext)
     const { users } = useContext(UserContext)
+
     console.log(topic)
 
-    const sortedPosts = posts.sort(
-        function (a, b) {
-            return new Date(b.timestamp) - new Date(a.timestamp)
-        })
+    function filterPostsByTopicId(TopicNum) {
+        return posts.filter(post => post.topicId === TopicNum)
+    }
+
+    function sortArrayByMostRecent(array) {
+        array.sort(
+            function (a, b) {
+                return new Date(b.timestamp) - new Date(a.timestamp)
+            })
+            return array
+        }
+
+    const sortedPosts = sortArrayByMostRecent(posts)
     
 
     return (

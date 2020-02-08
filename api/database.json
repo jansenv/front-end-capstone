@@ -1,72 +1,88 @@
 {
-    "users": [
-        {
-            "email": "w@m.com",
-            "password": "123",
-            "username": "SingingWilly",
-            "id": 1
-        },
-        {
-            "email": "g@f.com",
-            "password": "123",
-            "username": "GrandMasterGarrett",
-            "id": 2
-        },
-        {
-            "email": "jansenv44@gmail.com",
-            "password": "123",
-            "username": "jansenv",
-            "id": 3
-        }
-    ],
-    "posts": [
-        {
-            "id": 1,
-            "title": "look at my cat",
-            "img": "willy-cat.jpg",
-            "description": "it's my cat",
-            "code": "n/a",
-            "timestamp": 123908324344,
-            "topicId": 3,
-            "userId": 1
-        },
-        {
-            "id": 2,
-            "title": "cool font styling!",
-            "img": "font-styling.png",
-            "description": "i made this",
-            "code": "https://github.com/garrettfreshwater-nss/glassdale-pd-criminal-api/blob/master/styles/main.css",
-            "timestamp": 1234312412359,
-            "topicId": 2,
-            "userId": 2
-        }
-    ],
-    "topics": [
-        {
-            "id": 1,
-            "name": "General"
-        },
-        {
-            "id": 2,
-            "name": "CSS"
-        },
-        {
-            "id": 3,
-            "name": "Pets"
-        }
-    ],
-    "comments": [
-        {
-            "id": 1,
-            "text": "i'm mr. freshwater",
-            "userId": 2,
-            "postId": 1
-        },
-        {
-            "id": 2,
-            "text": "i'm willy",
-            "userId": 1,
-            "postId": 2
-        }
-    ]
+  "users": [
+    {
+      "email": "w@m.com",
+      "password": "wm",
+      "username": "SingingWilly",
+      "id": 1
+    },
+    {
+      "email": "g@f.com",
+      "password": "gf",
+      "username": "GrandMasterGarrett",
+      "id": 2
+    },
+    {
+      "email": "jansenv44@gmail.com",
+      "password": "jv",
+      "username": "jansenv",
+      "id": 3
+    },
+    {
+      "email": "Leah@LemurLovers.com",
+      "password": "ll",
+      "username": "Lemur_Leah",
+      "id": 4
+    }
+  ],
+  "posts": [
+    {
+      "id": 1,
+      "title": "look at my cat",
+      "img": "willy-cat.jpg",
+      "description": "it's my cat",
+      "code": "n/a",
+      "timestamp": 1581008245319,
+      "topicId": 3,
+      "userId": 1
+    },
+    {
+      "id": 2,
+      "title": "cool font styling!",
+      "img": "font-styling.png",
+      "description": "made this for my glassdale project",
+      "code": "h1 {\n    line-height: 0rem;\n    letter-spacing: .85rem;\n    font-family: OpenSans;\n    font-weight: 600;\n    text-align: center;\n    font-size: 5em;\n    color: #FFFFFF;\n    background: #232323;\n    text-shadow: 0 0 5px rgb(199, 114, 114),\n        0 0 5px #FFF,\n        0 0 5px #FFF,\n        0 0 20px #0C317A,\n        0 0 10px #0C317A,\n        0 0 40px #0C317A,\n        0 0 55px #0C317A,\n        0 0 75px #0C317A;\n}",
+      "timestamp": 1581087163561,
+      "topicId": 2,
+      "userId": 2
+    },
+    {
+      "id": 3,
+      "title": "Just adopted this CUTE Lemur!",
+      "img": "lemur.jpg",
+      "description": "We saw him on this tree in Madagascar and just had to take him home with us.",
+      "code": "n/a",
+      "timestamp": 1581133155706,
+      "topicId": 3,
+      "userId": 4
+    }
+  ],
+  "topics": [
+    {
+      "id": 1,
+      "name": "all"
+    },
+    {
+      "id": 2,
+      "name": "css"
+    },
+    {
+      "id": 3,
+      "name": "pets"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "text": "i'm mr. freshwater",
+      "userId": 2,
+      "postId": 1
+    },
+    {
+      "id": 2,
+      "text": "i'm willy",
+      "userId": 1,
+      "postId": 2
+    }
+  ]
 }

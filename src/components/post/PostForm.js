@@ -32,10 +32,8 @@ export default props => {
                 updatePost({
                     id: postsArray.id,
                     title: postsArray.title,
-                    img: postsArray.img,
                     description: postsArray.description,
                     code: postsArray.code,
-                    timestamp: Date.now(),
                     topicId: parseInt(postsArray.topicId),
                     userId: parseInt(localStorage.getItem("activeUser"))
                 })

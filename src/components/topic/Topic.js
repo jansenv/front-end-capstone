@@ -3,10 +3,12 @@ import "./Topic.css"
 import PostList from "../post/PostList"
 
 
-export default ({ props, topic }) => {
+export default ({ topic }) => {
+
+    debugger
 
     function RenderTopics() {
-        return <button onClick={() => <PostList topic={topic.topicId} />} id={`${topic.id}`}>
+        return <button onClick={() => <PostList key={topic.id} topic={topic} />} id={`${topic.id}`}>
             {topic.name}
         </button>
     }
