@@ -6,7 +6,7 @@ export const CommentProvider = (props) => {
     const [comments, setComments] = useState([])
 
     const getComments = () => {
-        return fetch("http://localhost:8088/comments")
+        return fetch("http://localhost:8088/comments?_expand=user")
             .then(res => res.json())
             .then(setComments)
     }
