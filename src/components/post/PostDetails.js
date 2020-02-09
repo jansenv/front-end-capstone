@@ -17,6 +17,8 @@ export default (props) => {
     const sortedComments = postComments.map(comment => {
         return <p key={comment.id}>
             {comment.text}
+            <br/>
+            {comment.user.username}
             </p>
     })
 
