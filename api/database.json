@@ -83,6 +83,12 @@
       "text": "i'm willy",
       "userId": 1,
       "postId": 2
+    },
+    {
+      "id": 3,
+      "text": "i'm leah",
+      "userId": 4,
+      "postId": 2
     }
   ]
 }

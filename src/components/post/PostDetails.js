@@ -39,6 +39,9 @@ export default (props) => {
                 Comments
                 {sortedComments}
             </section>
+            <div className="messageBox">
+                <button onClick={() => props.history.push('/comment')}>Comment</button>
+            </div>
         </section>
     )
 }

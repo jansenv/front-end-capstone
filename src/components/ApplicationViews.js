@@ -5,9 +5,9 @@ import { PostProvider } from "./post/PostProvider"
 import { UserProvider } from "./users/UserProvider"
 import { TopicProvider } from "./topic/TopicProvider"
 import PostForm from "./post/PostForm"
-import TopicList from "./topic/TopicList"
 import PostDetails from "./post/PostDetails"
 import { CommentProvider } from "./comments/CommentProvider"
+import CommentForm from "./comments/CommentForm"
 
 export default (props) => {
     return (
@@ -38,6 +38,9 @@ export default (props) => {
                             />
                             <Route path="/:postId(\d+)"
                                 render={props => <PostDetails {...props} />}
+                            />
+                            <Route exact path="/comment"
+                                render={props => <CommentForm {...props} />}
                             />
                         </PostProvider>
                     </UserProvider>
