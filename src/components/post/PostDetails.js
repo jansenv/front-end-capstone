@@ -22,8 +22,6 @@ export default (props) => {
             </p>
     })
 
-    console.log(sortedComments)
-
     return (
         <section className="postDetails">
             <section className="post">

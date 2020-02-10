@@ -1,4 +1,4 @@
-import React, { useContext } from "react"
+import React, { useContext, useState, useEffect } from "react"
 import "./Post.css"
 import { PostContext } from "./PostProvider"
 import { Link } from "react-router-dom"
@@ -6,7 +6,33 @@ import { Link } from "react-router-dom"
 
 export default ({ history, post, user }) => {
 
-    const { deletePost } = useContext(PostContext)
+    const { posts, updatePost, deletePost } = useContext(PostContext)
+    const [postsArray, setPosts] = useState({})
+
+    // Add form bullshit
+
+    const handleControlledInputChange = (e) => {
+
+        const newPosts = Object.assign({}, postsArray)
+        newPosts[e.target.name] = e.target.value
+        setPosts(newPosts)
+    }
+
+    const setDefaults = () => {
+        const postId = parseInt(history.params)
+        const selectedPosts = posts.find(p => p.id === postId) || {}
+        setPosts(selectedPosts)
+    }
+
+    useEffect(() => {
+        setDefaults()
+    }, [posts])
+
+    const createNewVote = () => {
+        updatePost({
+            votes: postsArray.votes
+        }).then(history.push("/"))
+    }
 
     function LoggedInUserButtons() {
         if (post.userId === parseInt(localStorage.getItem("activeUser"))) {
@@ -29,6 +55,9 @@ export default ({ history, post, user }) => {
 
     function RenderPosts() {
         return <section className="post">
+            <div>
+                {post.votes}
+            </div>
             <img src={require(`../../images/${post.img}`)} />
             <h3 className="post__title">
                 <Link to={`/${post.id}`}>
