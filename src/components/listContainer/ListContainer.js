@@ -52,39 +52,39 @@ export default (props) => {
 
             function LoggedInUserButtons() {
               if (post.userId === parseInt(localStorage.getItem("activeUser"))) {
-                  return (
-                      <>
-                      <button onClick={() => {
-                          props.history.push(`/edit/${post.id}`)
-                      }}>Edit</button>
-      
-                      <button onClick={() => {
-                          deletePost(post)
-                              .then(() => {
-                                  props.history.push("/")
-                              })
-                      }}>Delete</button>
-                      </>
-                  )
-              }
-          }
+                return (
+                  <>
+                    <button onClick={() => {
+                      props.history.push(`/edit/${post.id}`)
+                    }}>Edit</button>
 
-          function RenderPosts() {
-            return <section className="post">
+                    <button onClick={() => {
+                      deletePost(post)
+                        .then(() => {
+                          props.history.push("/")
+                        })
+                    }}>Delete</button>
+                  </>
+                )
+              }
+            }
+
+            function RenderPosts() {
+              return <section className="post">
                 <div>
-                    {post.votes}
+                  {post.votes}
                 </div>
                 <img src={require(`../../images/${post.img}`)} />
                 <h3 className="post__title">
-                    <Link to={`/${post.id}`}>
-                        {post.title}
-                    </Link>
+                  <Link to={`/${post.id}`}>
+                    {post.title}
+                  </Link>
                 </h3>
                 <div className="post__author">Submitted by {foundedUser.username}</div>
                 {LoggedInUserButtons()}
-            </section>
-        }
-        return RenderPosts()
+              </section>
+            }
+            return RenderPosts()
           })}
       </div>
     </>
