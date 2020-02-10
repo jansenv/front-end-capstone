@@ -1,6 +1,5 @@
 import React from "react"
 import { Route, Link } from "react-router-dom"
-import PostList from "./post/PostList"
 import { PostProvider } from "./post/PostProvider"
 import { UserProvider } from "./users/UserProvider"
 import { TopicProvider } from "./topic/TopicProvider"
@@ -8,7 +7,7 @@ import PostForm from "./post/PostForm"
 import PostDetails from "./post/PostDetails"
 import { CommentProvider } from "./comments/CommentProvider"
 import CommentForm from "./comments/CommentForm"
-import TopicList from "./topic/TopicList"
+import ListContainer from "./listContainer/ListContainer"
 
 export default (props) => {
     return (
@@ -29,10 +28,7 @@ export default (props) => {
                                             }}>Sign Out
                                         </Link></p> : ""}
                             <Route exact path="/"
-                                render={props => <TopicList {...props} />}
-                            />
-                            <Route exact path="/"
-                                render={props => <PostList {...props} />}
+                                render={props => <ListContainer {...props} />}
                             />
                             <Route path="/create"
                                 render={props => <PostForm {...props} />}
