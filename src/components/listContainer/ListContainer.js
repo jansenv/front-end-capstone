@@ -1,10 +1,10 @@
 import React, { useContext } from "react"
-import "../post/Post.css"
 import { UserContext } from "../users/UserProvider"
 import { TopicContext } from "../topic/TopicProvider"
 import Post from "../post/Post"
 import { PostContext } from "../post/PostProvider"
-import Topic from "../topic/Topic"
+import "../post/Post.css"
+import "./ListContainer.css"
 
 
 export default (props) => {
@@ -34,57 +34,33 @@ export default (props) => {
     return FilteredPosts
   }
 
-  let topicNum = 2;
+  return (
+    <>
+      <div className="sidebar">
+        <h2>Directory</h2>
 
-  if (topicNum === 0) {
+        {
+          topics.map(topic => {
+            return <button key={topic.id}>
+              {topic.name}
+            </button>
+          })}
+      </div>
 
-    return (
-      <>
-        <div className="posts">
-          <h2>Filtered Posts</h2>
+      <div className="posts">
+        <h2>All posts</h2>
 
-          <button onClick={() => props.history.push("/create")}>
-            Create Post
+        <button onClick={() => props.history.push("/create")}>
+          Create Post
           </button>
 
-          {
-            filterPostsByTopicId(2).map(post => {
-              const foundedUser = users.find(u => u.id === post.userId) || {}
+        {
+          sortedPosts.map(post => {
+            const foundedUser = users.find(u => u.id === post.userId) || {}
 
-              return <Post key={post.id} user={foundedUser} post={post} {...props} />
-            })}
-        </div>
-      </>
-    )
-
-  } else {
-
-    return (
-      <>
-        <div className="sidebar">
-          <h2>Directory</h2>
-
-          {
-            topics.map(topic => {
-              return <Topic key={topic.id} topic={topic} {...props} />
-            })}
-        </div>
-
-        <div className="posts">
-          <h2>All posts</h2>
-
-          <button onClick={() => props.history.push("/create")}>
-            Create Post
-          </button>
-
-          {
-            sortedPosts.map(post => {
-              const foundedUser = users.find(u => u.id === post.userId) || {}
-
-              return <Post key={post.id} post={post} user={foundedUser} {...props} />
-            })}
-        </div>
-      </>
-    )
-  }
+            return <Post key={post.id} post={post} user={foundedUser} {...props} />
+          })}
+      </div>
+    </>
+  )
 }
