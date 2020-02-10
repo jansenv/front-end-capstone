@@ -2,6 +2,7 @@ import React, { useContext, useState, useEffect } from "react"
 import "./Post.css"
 import { PostContext } from "./PostProvider"
 import { Link } from "react-router-dom"
+import Upvote from "../upvote/Upvote"
 
 
 export default ({ history, post, user }) => {
@@ -29,6 +30,7 @@ export default ({ history, post, user }) => {
 
     function RenderPosts() {
         return <section className="post">
+            <Upvote />
             <div>
                 {post.votes}
             </div>
