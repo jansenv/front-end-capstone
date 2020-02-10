@@ -36,12 +36,8 @@ export default (props) => {
                 <div className="post__code">Code: {post.code}</div>
             </section>
             <section className="comments">
-                Comments
                 {sortedComments}
             </section>
-            <div className="messageBox">
-                <button onClick={() => props.history.push('/comment')}>Comment</button>
-            </div>
         </section>
     )
 }

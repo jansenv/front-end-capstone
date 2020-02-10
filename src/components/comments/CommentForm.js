@@ -63,7 +63,6 @@ export default (props) => {
                 onClick={evt => {
                     evt.preventDefault()
                     createNewComment()
-                    props.history.push('/')
                 }}
                 className="btn btn-primary">
                 {editMode ? "Update Comment" : "Add Comment"}
