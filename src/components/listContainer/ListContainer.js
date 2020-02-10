@@ -1,7 +1,6 @@
 import React, { useContext } from "react"
 import { UserContext } from "../users/UserProvider"
 import { TopicContext } from "../topic/TopicProvider"
-import Post from "../post/Post"
 import { PostContext } from "../post/PostProvider"
 import "./ListContainer.css"
 import { Link } from "react-router-dom"
@@ -70,7 +69,7 @@ export default (props) => {
             }
 
             function RenderPosts() {
-              return <section className="post">
+              return <section key={post.id} className="post">
                 <div>
                   {post.votes}
                 </div>
