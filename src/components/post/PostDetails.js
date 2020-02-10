@@ -1,5 +1,4 @@
 import React, { useContext } from "react"
-import "./Post.css"
 import { PostContext } from "./PostProvider"
 import { UserContext } from "../users/UserProvider"
 import { CommentContext } from "../comments/CommentProvider"

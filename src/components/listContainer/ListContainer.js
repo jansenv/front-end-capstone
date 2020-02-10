@@ -3,7 +3,6 @@ import { UserContext } from "../users/UserProvider"
 import { TopicContext } from "../topic/TopicProvider"
 import Post from "../post/Post"
 import { PostContext } from "../post/PostProvider"
-import "../post/Post.css"
 import "./ListContainer.css"
 
 

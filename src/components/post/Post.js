@@ -1,5 +1,4 @@
 import React, { useContext, useState, useEffect } from "react"
-import "./Post.css"
 import { PostContext } from "./PostProvider"
 import { Link } from "react-router-dom"
 
