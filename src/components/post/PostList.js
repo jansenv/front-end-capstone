@@ -3,15 +3,13 @@ import "./Post.css"
 import { PostContext } from "./PostProvider"
 import Post from "./Post"
 import { UserContext } from "../users/UserProvider"
-import { TopicContext } from "../topic/TopicProvider"
 import TopicList from "../topic/TopicList"
 
-export default (props, topicNum) => {
+export default (props, topic) => {
     const { posts } = useContext(PostContext)
-    const { topics } = useContext(TopicContext)
     const { users } = useContext(UserContext)
 
-    console.log(topicNum)
+    console.log(topic)
 
     function sortArrayByMostRecent(array) {
         array.sort(
@@ -31,12 +29,12 @@ export default (props, topicNum) => {
         return FilteredPosts
     }
 
+    let topicNum = 2;
 
-    if (topicNum === 3) {
+    if (topicNum === 0) {
 
         return (
             <>
-                <TopicList />
                 <div className="posts">
                     <h2>Filtered Posts</h2>
 
@@ -45,11 +43,11 @@ export default (props, topicNum) => {
                         </button>
 
                     {
-                        filterPostsByTopicId(3).map(post => {
-                                const foundedUser = users.find(u => u.id === post.userId) || {}
+                        filterPostsByTopicId(2).map(post => {
+                            const foundedUser = users.find(u => u.id === post.userId) || {}
 
-                                return <Post key={post.id} user={foundedUser} post={post} {...props} />
-                            })}
+                            return <Post key={post.id} user={foundedUser} post={post} {...props} />
+                        })}
                 </div>
             </>
         )
@@ -58,7 +56,6 @@ export default (props, topicNum) => {
 
         return (
             <>
-                <TopicList />
                 <div className="posts">
                     <h2>All posts</h2>
 

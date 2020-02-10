@@ -6,33 +6,7 @@ import { Link } from "react-router-dom"
 
 export default ({ history, post, user }) => {
 
-    const { posts, updatePost, deletePost } = useContext(PostContext)
-    const [postsArray, setPosts] = useState({})
-
-    // Add form bullshit
-
-    const handleControlledInputChange = (e) => {
-
-        const newPosts = Object.assign({}, postsArray)
-        newPosts[e.target.name] = e.target.value
-        setPosts(newPosts)
-    }
-
-    const setDefaults = () => {
-        const postId = parseInt(history.params)
-        const selectedPosts = posts.find(p => p.id === postId) || {}
-        setPosts(selectedPosts)
-    }
-
-    useEffect(() => {
-        setDefaults()
-    }, [posts])
-
-    const createNewVote = () => {
-        updatePost({
-            votes: postsArray.votes
-        }).then(history.push("/"))
-    }
+    const { deletePost } = useContext(PostContext)
 
     function LoggedInUserButtons() {
         if (post.userId === parseInt(localStorage.getItem("activeUser"))) {

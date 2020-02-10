@@ -5,12 +5,10 @@ import PostList from "../post/PostList"
 
 export default ({ topic }) => {
 
-    // function sendTopicToPostList () {
-    //     return <PostList key={topic.id} topic={topic} />
-    // }
+    console.log("topic on topic.js", topic)
 
     function RenderTopics() {
-    return <button id={`${topic.id}`}>
+        return <button onClick={() => <PostList key={topic.id} topic={topic}/>} id={`${topic.id}`}>
             {topic.name}
         </button>
     }

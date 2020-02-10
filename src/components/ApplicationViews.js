@@ -8,6 +8,7 @@ import PostForm from "./post/PostForm"
 import PostDetails from "./post/PostDetails"
 import { CommentProvider } from "./comments/CommentProvider"
 import CommentForm from "./comments/CommentForm"
+import TopicList from "./topic/TopicList"
 
 export default (props) => {
     return (
@@ -27,6 +28,9 @@ export default (props) => {
                                                 props.history.push("/")
                                             }}>Sign Out
                                         </Link></p> : ""}
+                            <Route exact path="/"
+                                render={props => <TopicList {...props} />}
+                            />
                             <Route exact path="/"
                                 render={props => <PostList {...props} />}
                             />
