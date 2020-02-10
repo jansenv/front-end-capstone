@@ -6,7 +6,7 @@ export const TopicProvider = (props) => {
     const [topics, setTopics] = useState([])
 
     const getTopics = () => {
-        return fetch("http://localhost:8088/topics")
+        return fetch("http://localhost:8088/topics?_embed=posts")
             .then(res => res.json())
             .then(setTopics)
     }

@@ -3,7 +3,8 @@ import { UserContext } from "../users/UserProvider"
 import { TopicContext } from "../topic/TopicProvider"
 import { PostContext } from "../post/PostProvider"
 import "./ListContainer.css"
-import { Link } from "react-router-dom"
+import "../post/Post.css"
+import Post from "../post/Post"
 
 
 export default (props) => {
@@ -26,13 +27,18 @@ export default (props) => {
   const sortedPosts = sortArrayByMostRecent(posts)
 
   return (
+    
     <>
+
+    <main>
       <div className="sidebar">
         <h2>Directory</h2>
-
         {
           topics.map(topic => {
-            return <button key={topic.id}>
+            return <button key={topic.id} value={topic.id} onClick={(event) => {
+              console.log("value of button", event.target.value)
+              topic.posts.map()
+            }}>
               {topic.name}
             </button>
           })}
@@ -43,49 +49,17 @@ export default (props) => {
 
         <button onClick={() => props.history.push("/create")}>
           Create Post
-          </button>
+        </button>
 
         {
           sortedPosts.map(post => {
             const foundedUser = users.find(u => u.id === post.userId) || {}
 
-            function LoggedInUserButtons() {
-              if (post.userId === parseInt(localStorage.getItem("activeUser"))) {
-                return (
-                  <>
-                    <button onClick={() => {
-                      props.history.push(`/edit/${post.id}`)
-                    }}>Edit</button>
-
-                    <button onClick={() => {
-                      deletePost(post)
-                        .then(() => {
-                          props.history.push("/")
-                        })
-                    }}>Delete</button>
-                  </>
-                )
-              }
-            }
-
-            function RenderPosts() {
-              return <section key={post.id} className="post">
-                <div>
-                  {post.votes}
-                </div>
-                <img src={require(`../../images/${post.img}`)} />
-                <h3 className="post__title">
-                  <Link to={`/${post.id}`}>
-                    {post.title}
-                  </Link>
-                </h3>
-                <div className="post__author">Submitted by {foundedUser.username}</div>
-                {LoggedInUserButtons()}
-              </section>
-            }
-            return RenderPosts()
+            return < Post key={post.id} post={post} user={foundedUser} />
           })}
       </div>
+    </main>
+
     </>
   )
 }
