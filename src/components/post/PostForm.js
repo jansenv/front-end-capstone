@@ -66,17 +66,12 @@ export default props => {
                     <select 
                     defaultValue={postsArray.topicId}
                     name="topicId"
-                    onChange={handleControlledInputChange}>
+                    onChange={handleControlledInputChange}
+                    required>
                         <option>Please select a topic...</option>
                         {topics.map(topic=>
                             <option key={topic.id} value={topic.id}>{topic.name}</option>)}
                     </select>
-                    {/* <input type="text" name="topic" required className="form-control"
-                        proptype="varchar"
-                        placeholder=""
-                        defaultValue={postsArray.topicId}
-                        onChange={handleControlledInputChange}
-                    /> */}
                 </div>
             </fieldset>
             <fieldset>
