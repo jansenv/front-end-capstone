@@ -9,7 +9,7 @@ import { CommentProvider } from "./comments/CommentProvider"
 import CommentForm from "./comments/CommentForm"
 import ListContainer from "./listContainer/ListContainer"
 import theme from '../ThemeProvider';
-import { ThemeProvider } from "@material-ui/core"
+import { ThemeProvider, Button } from "@material-ui/core"
 
 
 
@@ -24,14 +24,15 @@ export default (props) => {
                             {
                                 localStorage.getItem("activeUser")
                                     ? <p className="logout__text">
-                                        <Link className="logout__link"
+                                        <Button color="error" variant="contained" className="logout__link"
                                             to=""
+                                            component={Link}
                                             onClick={e => {
                                                 e.preventDefault()
                                                 localStorage.removeItem("activeUser")
                                                 props.history.push("/")
                                             }}>Sign Out
-                                        </Link></p> : ""}
+                                        </Button></p> : ""}
                             <Route exact path="/"
                                 render={props => <ListContainer {...props} />}
                             />
