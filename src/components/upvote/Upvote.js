@@ -1,13 +1,14 @@
 import React, { useState } from 'react'
+import { Button } from "reactstrap";
 
-export default Upvote => {
+export default props => {
     const [postsArray, setPosts] = useState({})
     const [count, setCount] = useState(0);
 
     return (
         <div>
             <p>{count}</p>
-            <button onClick={() => setCount(count + 1)}>Updoot</button>
+            <Button color="danger" onClick={() => setCount(count + 1)}>Updoot</Button>
         </div>
     )
 }
