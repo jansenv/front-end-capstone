@@ -52,43 +52,22 @@ export default (props) => {
           <h2>Directory</h2>
           {
             topics.map(topic => {
-              return <button color="primary" variant="contained" key={topic.id} name="topicId" value={topic.id} onClick={handleControlledInputChange}>
+              return <Button color="primary" variant="contained" key={topic.id} name="topicId" value={topic.id} onClick={handleControlledInputChange}>
                 {topic.name}
-              </button>
+              </Button>
             })}
-          {/* <select
-
-            value={postsObject.topicId}
-            name="topicId"
-
-            id="topicId"
-            className="form-control"
-            onChange={handleControlledInputChange}
-
-          >
-
-            <option value="0">Select Topic</option>
-            {topics.map(topic => (
-              <option key={topic.id} value={topic.id}>
-                {topic.name}
-              </option>
-
-
-            ))}
-          </select> */}
         </div>
 
         <div className="posts">
-          <h2 className="PostsHeader">All posts</h2>
 
           <Button id="CreatePostButton" color="secondary" variant="contained" onClick={() => props.history.push("/create")}>
             Submit a Post
-        </Button>
+          </Button>
 
           {}
 
           {
-          filteredPostsByTopic.map(post => {
+            sortArrayByMostRecent(filteredPostsByTopic).map(post => {
             const foundedUser = users.find(u => u.id === post.userId) || {}
 
             return < Post key={post.id} post={post} user={foundedUser} {...props} />
