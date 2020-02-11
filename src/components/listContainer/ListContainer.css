@@ -1,7 +1,18 @@
+.PostsHeader{
+    position: fixed;
+}
+
 .sidebar{
     display: flex;
     flex-direction: column;
     padding: 0px 100px;
     position: fixed;
+    width: 200px;
+}
+
+#CreatePostButton {
+    position: fixed;
+    height: 200px;
+    margin: 25em 75em;
     width: 200px;
 }

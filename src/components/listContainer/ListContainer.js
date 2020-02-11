@@ -47,10 +47,10 @@ export default (props) => {
       </div>
 
       <div className="posts">
-        <h2>All posts</h2>
+        <h2 class="PostsHeader">All posts</h2>
 
-        <Button color="primary" variant="contained" onClick={() => props.history.push("/create")}>
-          Create Post
+        <Button id="CreatePostButton" color="secondary" variant="contained" onClick={() => props.history.push("/create")}>
+          Submit a Post
         </Button>
 
         {
