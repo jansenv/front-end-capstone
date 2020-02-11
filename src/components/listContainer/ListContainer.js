@@ -64,8 +64,6 @@ export default (props) => {
             Submit a Post
           </Button>
 
-          {}
-
           {
             sortArrayByMostRecent(filteredPostsByTopic).map(post => {
             const foundedUser = users.find(u => u.id === post.userId) || {}
