@@ -3,8 +3,7 @@
 
 /*Typography
 --------------------------------------------------------------*/
-.logout__text {
-  font-size: 14px;
+#logOutButton {
   position: fixed;
-  margin: 2em 0em 0em 100em;
+  margin: 2em 0em 0em 115em;
 }
