@@ -31,31 +31,32 @@ export default props => {
     }, [posts])
 
     const createNewPost = () => {
-            if (editMode) {
-                updatePost({
-                    id: postsArray.id,
-                    title: postsArray.title,
-                    description: postsArray.description,
-                    code: postsArray.code,
-                    topicId: parseInt(postsArray.topicId),
-                    userId: parseInt(localStorage.getItem("activeUser"))
-                })
-                    .then(() => props.history.push("/"))
-            } else {
-                addPost({
-                  id: postsArray.id,
-                  title: postsArray.title,
-                  img: postsArray.img,
-                  description: postsArray.description,
-                  code: postsArray.code,
-                  timestamp: Date.now(),
-                  topicId: parseInt(postsArray.topicId),
-                  userId: parseInt(localStorage.getItem("activeUser"))
-              })
-                  .then(() => props.history.push("/"))
-            }
+        if (editMode) {
+            updatePost({
+                id: postsArray.id,
+                title: postsArray.title,
+                description: postsArray.description,
+                code: postsArray.code,
+                topicId: parseInt(postsArray.topicId),
+                userId: parseInt(localStorage.getItem("activeUser"))
+            })
+                .then(() => props.history.push("/"))
+        } else {
+            addPost({
+                id: postsArray.id,
+                title: postsArray.title,
+                img: postsArray.img,
+                description: postsArray.description,
+                code: postsArray.code,
+                timestamp: Date.now(),
+                votes: 0,
+                topicId: parseInt(postsArray.topicId),
+                userId: parseInt(localStorage.getItem("activeUser"))
+            })
+                .then(() => props.history.push("/"))
         }
-    
+    }
+
 
     return (
         <form className="postForm">
@@ -63,13 +64,13 @@ export default props => {
             <fieldset>
                 <div className="form-group">
                     <label htmlFor="topic">topic: </label>
-                    <select 
-                    defaultValue={postsArray.topicId}
-                    name="topicId"
-                    onChange={handleControlledInputChange}
-                    required>
+                    <select
+                        defaultValue={postsArray.topicId}
+                        name="topicId"
+                        onChange={handleControlledInputChange}
+                        required>
                         <option>Please select a topic...</option>
-                        {topics.map(topic=>
+                        {topics.map(topic =>
                             <option key={topic.id} value={topic.id}>{topic.name}</option>)}
                     </select>
                 </div>
