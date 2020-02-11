@@ -13,7 +13,7 @@ export default (props) => {
         newComment[event.target.name] = event.target.value
         console.log("targetvalue", comment)
         setComment(newComment)
-    } 
+    }
 
     const setDefaults = () => {
         if (editMode) {

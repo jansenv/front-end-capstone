@@ -31,9 +31,6 @@ export default ({ history, post, user }) => {
     function RenderPosts() {
         return <section className="post">
             <Upvote />
-            <div>
-                {post.votes}
-            </div>
             <img src={require(`../../images/${post.img}`)} />
             <h3 className="post__title">
                 <Link to={`/${post.id}`}>
