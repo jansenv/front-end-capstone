@@ -75,7 +75,7 @@ const Login = props => {
                     <fieldset>
                         <Button color="primary" type="submit">
                             Sign in
-                    </Button>
+                        </Button>
                     </fieldset>
                 </form>
             </section>

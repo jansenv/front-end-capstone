@@ -2,9 +2,11 @@ import React, { useState, useEffect, useContext } from "react"
 import { PostContext } from "./PostProvider"
 import "./PostForm.css"
 import { Button } from "@material-ui/core"
+import { TopicContext } from "../topic/TopicProvider"
 
 export default props => {
     const { posts, addPost, updatePost } = useContext(PostContext)
+    const { topics } = useContext(TopicContext)
     const [postsArray, setPosts] = useState({})
 
     const editMode = props.match.params.hasOwnProperty("postId")
@@ -47,7 +49,7 @@ export default props => {
                   description: postsArray.description,
                   code: postsArray.code,
                   timestamp: Date.now(),
-                  topicId: parseInt(postsArray.topic),
+                  topicId: parseInt(postsArray.topicId),
                   userId: parseInt(localStorage.getItem("activeUser"))
               })
                   .then(() => props.history.push("/"))
@@ -61,12 +63,20 @@ export default props => {
             <fieldset>
                 <div className="form-group">
                     <label htmlFor="topic">topic: </label>
-                    <input type="text" name="topic" required className="form-control"
+                    <select 
+                    defaultValue={postsArray.topicId}
+                    name="topicId"
+                    onChange={handleControlledInputChange}>
+                        <option>Please select a topic...</option>
+                        {topics.map(topic=>
+                            <option key={topic.id} value={topic.id}>{topic.name}</option>)}
+                    </select>
+                    {/* <input type="text" name="topic" required className="form-control"
                         proptype="varchar"
                         placeholder=""
                         defaultValue={postsArray.topicId}
                         onChange={handleControlledInputChange}
-                    />
+                    /> */}
                 </div>
             </fieldset>
             <fieldset>
