@@ -36,11 +36,11 @@ export default (props) => {
         <h2>Directory</h2>
         {
           topics.map(topic => {
-            return <Button color="primary" variant="contained" key={topic.id} value={topic.id} onClick={(event) => {
+            return <button color="primary" variant="contained" key={topic.id} value={topic.id} onClick={(event) => {
               console.log("value of button", event.target.value)
             }}>
               {topic.name}
-            </Button>
+            </button>
           })}
       </div>
 
