@@ -30,12 +30,12 @@ export default (props) => {
 
     <>
 
-    <main>
+    <main id="main">
       <div className="sidebar">
         <h2>Directory</h2>
         {
           topics.map(topic => {
-            return <Button key={topic.id} value={topic.id} onClick={(event) => {
+            return <Button color="primary" variant="contained" key={topic.id} value={topic.id} onClick={(event) => {
               console.log("value of button", event.target.value)
               topic.posts.map(post =>
               <Post key={post.id} post={post} />
@@ -49,15 +49,15 @@ export default (props) => {
       <div className="posts">
         <h2>All posts</h2>
 
-        <button onClick={() => props.history.push("/create")}>
+        <Button color="primary" variant="contained" onClick={() => props.history.push("/create")}>
           Create Post
-        </button>
+        </Button>
 
         {
           sortedPosts.map(post => {
             const foundedUser = users.find(u => u.id === post.userId) || {}
 
-            return < Post key={post.id} post={post} user={foundedUser} />
+            return < Post key={post.id} post={post} user={foundedUser} {...props} />
           })}
       </div>
     </main>

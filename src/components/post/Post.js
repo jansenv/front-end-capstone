@@ -3,6 +3,7 @@ import "./Post.css"
 import { PostContext } from "./PostProvider"
 import { Link } from "react-router-dom"
 import Upvote from "../upvote/Upvote"
+import { Button } from "@material-ui/core"
 
 
 
@@ -14,16 +15,16 @@ export default ({ history, post, user }) => {
         if (post.userId === parseInt(localStorage.getItem("activeUser"))) {
             return (
                 <>
-                <button onClick={() => {
+                <Button color="primary" variant="contained" onClick={() => {
                     history.push(`/edit/${post.id}`)
-                }}>Edit</button>
+                }}>Edit</Button>
 
-                <button onClick={() => {
+                <Button color="primary" variant="contained" onClick={() => {
                     deletePost(post)
                         .then(() => {
                             history.push("/")
                         })
-                }}>Delete</button>
+                }}>Delete</Button>
                 </>
             )
         }

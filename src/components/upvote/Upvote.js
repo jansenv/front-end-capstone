@@ -8,7 +8,7 @@ export default props => {
     return (
         <div>
             <p>{count}</p>
-            <Button color="primary" onClick={() => setCount(count + 1)}>Updoot</Button>
+            <Button color="primary" variant="contained" onClick={() => setCount(count + 1)}>Updoot</Button>
         </div>
     )
 }

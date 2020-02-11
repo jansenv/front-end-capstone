@@ -1,5 +1,6 @@
 import React, { useRef } from "react"
 import "./Login.css"
+import { Button } from "@material-ui/core"
 
 const Register = props => {
     const username = useRef()
@@ -85,9 +86,9 @@ const Register = props => {
                         required />
                 </fieldset>
                 <fieldset>
-                    <button type="submit">
-                        Sign in
-                    </button>
+                    <Button color="primary" type="submit">
+                        Register
+                    </Button>
                 </fieldset>
             </form>
         </main>

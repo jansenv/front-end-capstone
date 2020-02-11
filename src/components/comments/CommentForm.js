@@ -1,5 +1,6 @@
 import React, { useContext, useEffect, useState } from "react"
 import { CommentContext } from "./CommentProvider"
+import { Button } from "@material-ui/core"
 
 
 export default (props) => {
@@ -59,14 +60,14 @@ export default (props) => {
                 </div>
             </fieldset>
 
-            <button type="submit"
+            <Button color="primary" variant="contained" type="submit"
                 onClick={evt => {
                     evt.preventDefault()
                     createNewComment()
                 }}
                 className="btn btn-primary">
                 {editMode ? "Update Comment" : "Add Comment"}
-            </button>
+            </Button>
 
         </form>
     )

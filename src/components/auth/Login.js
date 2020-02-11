@@ -1,6 +1,7 @@
 import React, { useRef } from "react"
 import { Link } from "react-router-dom";
 import "./Login.css"
+import { Button } from "@material-ui/core";
 
 
 const Login = props => {
@@ -24,7 +25,6 @@ const Login = props => {
 
         existingUserCheck()
             .then(exists => {
-                debugger
                 if (exists && exists.password === password.current.value) {
                     localStorage.setItem("activeUser", exists.id)
                     props.history.push("/")
@@ -54,7 +54,7 @@ const Login = props => {
         <main className="container--login">
             <section>
                 <form className="form--login" onSubmit={handleLogin}>
-                    <h1>CodeSnips</h1>
+                    <h1>CodeHub</h1>
                     <h2>Please sign in</h2>
                     <fieldset>
                         <label htmlFor="inputUsername"> Username </label>
@@ -73,9 +73,9 @@ const Login = props => {
                             required />
                     </fieldset>
                     <fieldset>
-                        <button type="submit">
+                        <Button color="primary" type="submit">
                             Sign in
-                    </button>
+                    </Button>
                     </fieldset>
                 </form>
             </section>

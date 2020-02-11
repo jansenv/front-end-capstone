@@ -8,11 +8,15 @@ import PostDetails from "./post/PostDetails"
 import { CommentProvider } from "./comments/CommentProvider"
 import CommentForm from "./comments/CommentForm"
 import ListContainer from "./listContainer/ListContainer"
+import theme from '../ThemeProvider';
+import { ThemeProvider } from "@material-ui/core"
+
 
 
 export default (props) => {
     return (
         <>
+        <ThemeProvider theme={theme}>
             <CommentProvider>
                 <TopicProvider>
                     <UserProvider>
@@ -47,6 +51,7 @@ export default (props) => {
                     </UserProvider>
                 </TopicProvider>
             </CommentProvider>
+            </ThemeProvider>
         </>
     )
 }

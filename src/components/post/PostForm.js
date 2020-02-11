@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useContext } from "react"
 import { PostContext } from "./PostProvider"
 import "./PostForm.css"
+import { Button } from "@material-ui/core"
 
 export default props => {
     const { posts, addPost, updatePost } = useContext(PostContext)
@@ -113,14 +114,14 @@ export default props => {
                 </div>
             </fieldset>
 
-            <button type="submit"
+            <Button color="primary" variant="contained" type="submit"
                 onClick={evt => {
                     evt.preventDefault()
                     createNewPost()
                 }}
                 className="btn btn-primary">
                 {editMode ? "Save Update" : "Add Post"}
-            </button>
+            </Button>
 
         </form>
     )
