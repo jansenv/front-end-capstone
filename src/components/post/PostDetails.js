@@ -5,7 +5,7 @@ import { CommentContext } from "../comments/CommentProvider"
 import { Button } from "@material-ui/core"
 
 export default (props) => {
-    const { comments, deleteComment } = useContext(CommentContext)
+    const { comments, updateComment, deleteComment } = useContext(CommentContext)
     const { posts } = useContext(PostContext)
     const { users } = useContext(UserContext)
 
@@ -18,7 +18,7 @@ export default (props) => {
         return <div key={comment.id}>
             <p>{comment.text}</p>
             <p>{comment.user.username}</p>
-            <Button color="primary" variant="contained">Edit</Button>
+            <Button color="primary" variant="contained" onClick={() => updateComment(comment)}>Edit</Button>
             <Button color="primary" variant="contained" onClick={() => deleteComment(comment)}>Delete</Button>
             </div>
     })

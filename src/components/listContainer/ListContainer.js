@@ -1,4 +1,4 @@
-import React, { useContext } from "react"
+import React, { useContext, useState } from "react"
 import { UserContext } from "../users/UserProvider"
 import { TopicContext } from "../topic/TopicProvider"
 import { PostContext } from "../post/PostProvider"
@@ -10,6 +10,7 @@ import Button from '@material-ui/core/Button';
 
 
 export default (props) => {
+  const [postsArray, setPosts] = useState({})
   const { posts, deletePost } = useContext(PostContext)
   const { topics } = useContext(TopicContext)
   const { users } = useContext(UserContext)
@@ -22,7 +23,7 @@ export default (props) => {
     return array
   }
 
-  const sortedPosts = sortArrayByMostRecent(posts)
+  const sortedPostsArray = sortArrayByMostRecent(posts)
 
 
 
@@ -37,9 +38,6 @@ export default (props) => {
           topics.map(topic => {
             return <Button color="primary" variant="contained" key={topic.id} value={topic.id} onClick={(event) => {
               console.log("value of button", event.target.value)
-              topic.posts.map(post =>
-              <Post key={post.id} post={post} />
-              )
             }}>
               {topic.name}
             </Button>
@@ -47,14 +45,14 @@ export default (props) => {
       </div>
 
       <div className="posts">
-        <h2 class="PostsHeader">All posts</h2>
+        <h2 className="PostsHeader">All posts</h2>
 
         <Button id="CreatePostButton" color="secondary" variant="contained" onClick={() => props.history.push("/create")}>
           Submit a Post
         </Button>
 
         {
-          sortedPosts.map(post => {
+          sortedPostsArray.map(post => {
             const foundedUser = users.find(u => u.id === post.userId) || {}
 
             return < Post key={post.id} post={post} user={foundedUser} {...props} />
