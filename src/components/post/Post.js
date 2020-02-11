@@ -5,6 +5,7 @@ import { Link } from "react-router-dom"
 import Upvote from "../upvote/Upvote"
 
 
+
 export default ({ history, post, user }) => {
 
     const { deletePost } = useContext(PostContext)

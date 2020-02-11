@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Button } from "reactstrap";
+import Button from '@material-ui/core/Button';
 
 export default props => {
     const [postsArray, setPosts] = useState({})
@@ -8,7 +8,7 @@ export default props => {
     return (
         <div>
             <p>{count}</p>
-            <Button color="danger" onClick={() => setCount(count + 1)}>Updoot</Button>
+            <Button color="primary" onClick={() => setCount(count + 1)}>Updoot</Button>
         </div>
     )
 }

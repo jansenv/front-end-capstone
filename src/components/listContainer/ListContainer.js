@@ -5,6 +5,8 @@ import { PostContext } from "../post/PostProvider"
 import "./ListContainer.css"
 import "../post/Post.css"
 import Post from "../post/Post"
+import Button from '@material-ui/core/Button';
+
 
 
 export default (props) => {
@@ -33,14 +35,14 @@ export default (props) => {
         <h2>Directory</h2>
         {
           topics.map(topic => {
-            return <button key={topic.id} value={topic.id} onClick={(event) => {
+            return <Button key={topic.id} value={topic.id} onClick={(event) => {
               console.log("value of button", event.target.value)
               topic.posts.map(post =>
               <Post key={post.id} post={post} />
               )
             }}>
               {topic.name}
-            </button>
+            </Button>
           })}
       </div>
 
