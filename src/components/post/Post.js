@@ -15,16 +15,16 @@ export default ({ history, post, topic, user }) => {
         if (post.userId === parseInt(localStorage.getItem("activeUser"))) {
             return (
                 <>
-                <Button color="primary" variant="contained" onClick={() => {
-                    history.push(`/edit/${post.id}`)
-                }}>Edit</Button>
+                    <Button color="primary" variant="contained" onClick={() => {
+                        history.push(`/edit/${post.id}`)
+                    }}>Edit</Button>
 
-                <Button color="primary" variant="contained" onClick={() => {
-                    deletePost(post)
-                        .then(() => {
-                            history.push("/")
-                        })
-                }}>Delete</Button>
+                    <Button color="primary" variant="contained" onClick={() => {
+                        deletePost(post)
+                            .then(() => {
+                                history.push("/")
+                            })
+                    }}>Delete</Button>
                 </>
             )
         }
@@ -32,7 +32,6 @@ export default ({ history, post, topic, user }) => {
 
     function RenderPosts() {
         return <section className="post">
-            <p>{post.votes}</p>
             <Vote />
             <img src={post.img} />
             <h3 className="post__title">
