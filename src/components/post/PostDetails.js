@@ -14,13 +14,25 @@ export default (props) => {
     const post = posts.find(p => p.id === chosenPostId) || {}
     const userWhoPosted = users.find(u => u.id === post.userId) || {}
     const postComments = comments.filter(c => c.postId === chosenPostId) || {}
+
     const sortedComments = postComments.map(comment => {
+
+        function LoggedInUserButtons() {
+            if (comment.userId === parseInt(localStorage.getItem("activeUser"))) {
+                return (
+                    <>
+                        <Button color="primary" variant="contained" onClick={() => props.history.push(`/comments/edit/${comment.id}`)}>Edit</Button>
+                        <Button color="primary" variant="contained" onClick={() => deleteComment(comment)}>Delete</Button>
+                    </>
+                )
+            }
+        }
+
         return <div key={comment.id}>
             <p>{comment.text}</p>
             <p>{comment.user.username}</p>
-            <Button color="primary" variant="contained" onClick={() => props.history.push(`/comments/edit/${comment.id}`)}>Edit</Button>
-            <Button color="primary" variant="contained" onClick={() => deleteComment(comment)}>Delete</Button>
-            </div>
+            {LoggedInUserButtons()}
+        </div>
     })
 
     return (
