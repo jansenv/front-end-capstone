@@ -66,7 +66,9 @@ export default (props) => {
                 onClick={evt => {
                     evt.preventDefault()
                     createNewComment()
-                    props.history.goBack()
+                    if (editMode === true) {
+                        props.history.goBack()
+                    }
                 }}
                 className="btn btn-primary">
                 {editMode ? "Update Comment" : "Add Comment"}
