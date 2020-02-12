@@ -11,7 +11,7 @@ import Button from '@material-ui/core/Button';
 
 export default (props) => {
   const [postsObject, setPosts] = useState({})
-  const { posts, deletePost } = useContext(PostContext)
+  const { posts } = useContext(PostContext)
   const { topics } = useContext(TopicContext)
   const { users } = useContext(UserContext)
 
