@@ -18,7 +18,7 @@ export default (props) => {
         return <div key={comment.id}>
             <p>{comment.text}</p>
             <p>{comment.user.username}</p>
-            <Button color="primary" variant="contained" onClick={() => updateComment(comment)}>Edit</Button>
+            <Button color="primary" variant="contained" onClick={() => props.history.push(`/comments/edit/${comment.id}`)}>Edit</Button>
             <Button color="primary" variant="contained" onClick={() => deleteComment(comment)}>Delete</Button>
             </div>
     })

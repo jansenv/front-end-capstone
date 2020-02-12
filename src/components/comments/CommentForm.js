@@ -31,14 +31,16 @@ export default (props) => {
     const createNewComment = () => {
         if (editMode) {
             updateComment({
+                id: comment.id,
                 text: comment.commentArea,
             })
         } else {
             addComment({
-              userId: parseInt(localStorage.getItem("activeUser")),
-              text: comment.commentArea,
-              postId: parseInt(props.match.params.postId, 10)
-          })
+                id: comment.id,
+                userId: parseInt(localStorage.getItem("activeUser")),
+                text: comment.commentArea,
+                postId: parseInt(props.match.params.postId, 10)
+            })
         }
     }
 
@@ -48,9 +50,9 @@ export default (props) => {
             <fieldset>
                 <div className="form-group">
                     <label htmlFor="commentArea">Comment: </label>
-                    <textarea 
-                        name="commentArea" 
-                        required 
+                    <textarea
+                        name="commentArea"
+                        required
                         className="form-control"
                         proptype="varchar"
                         placeholder=""
