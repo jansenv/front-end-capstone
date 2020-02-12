@@ -21,7 +21,7 @@ export default (props) => {
             if (comment.userId === parseInt(localStorage.getItem("activeUser"))) {
                 return (
                     <>
-                        <Button color="primary" variant="contained" onClick={() => props.history.push(`/comments/edit/${comment.id}`)}>Edit</Button>
+                        <Button color="primary" variant="contained" onClick={() => props.history.push(`/editComment/${comment.id}`)}>Edit</Button>
                         <Button color="primary" variant="contained" onClick={() => deleteComment(comment)}>Delete</Button>
                     </>
                 )

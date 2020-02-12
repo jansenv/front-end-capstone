@@ -41,13 +41,13 @@ export default (props) => {
                                 <Route path="/edit/:postId(\d+)"
                                     render={props => <PostForm {...props} />}
                                 />
-                                <Route path="/:postId(\d+)"
+                                <Route exact path="/:postId(\d+)"
                                     render={props => <PostDetails {...props} />}
                                 />
-                                <Route exact path="/:postId(\d)+"
+                                <Route exact path="/:postId(\d+)"
                                     render={props => <CommentForm {...props} />}
                                 />
-                                <Route exact path="/comments/edit/:commentId(\d)+"
+                                <Route exact path="/editComment/:commentId(\d+)"
                                     render={props => <CommentForm {...props} />}
                                 />
                             </PostProvider>
