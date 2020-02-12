@@ -38,7 +38,7 @@ export default (props) => {
     return (
         <section className="postDetails">
             <section className="post">
-                <img src={require(`../../images/${post.img}`)} />
+                <img src={post.img} />
                 <h3 className="post__title">
                     {post.title}
                 </h3>
