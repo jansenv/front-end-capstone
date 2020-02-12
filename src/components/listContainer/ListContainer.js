@@ -39,8 +39,6 @@ export default (props) => {
   const filteredPostsByTopic = posts.filter(post => post.topicId === parseInt(postsObject.topicId)) || []
   // array vs. state
 
-  console.log(postsObject.topicId)
-
   if (postsObject.topicId === undefined) {
     return <>
 
@@ -63,9 +61,10 @@ export default (props) => {
 
           {
             sortedPostsArray.map(post => {
+              const foundedTopic = topics.find(t => t.id === post.topicId) || {}
               const foundedUser = users.find(u => u.id === post.userId) || {}
 
-              return < Post key={post.id} post={post} user={foundedUser} {...props} />
+              return < Post key={post.id} post={post} topic={foundedTopic} user={foundedUser} {...props} />
             })}
         </div>
       </main>
@@ -94,9 +93,10 @@ export default (props) => {
 
           {
             sortedPostsArray.map(post => {
+              const foundedTopic = topics.find(t => t.id === post.topicId) || {}
               const foundedUser = users.find(u => u.id === post.userId) || {}
 
-              return < Post key={post.id} post={post} user={foundedUser} {...props} />
+              return < Post key={post.id} post={post} topic={foundedTopic} user={foundedUser} {...props} />
             })}
         </div>
       </main>
@@ -127,9 +127,10 @@ export default (props) => {
 
             {
               sortArrayByMostRecent(filteredPostsByTopic).map(post => {
+                const foundedTopic = topics.find(t => t.id === post.topicId) || {}
                 const foundedUser = users.find(u => u.id === post.userId) || {}
 
-                return < Post key={post.id} post={post} user={foundedUser} {...props} />
+                return < Post key={post.id} post={post} topic={foundedTopic} user={foundedUser} {...props} />
               })}
           </div>
         </main>

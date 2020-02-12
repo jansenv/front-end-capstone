@@ -6,7 +6,7 @@ import { Button } from "@material-ui/core"
 
 
 
-export default ({ history, post, user }) => {
+export default ({ history, post, topic, user }) => {
 
     const { deletePost } = useContext(PostContext)
 
@@ -38,7 +38,7 @@ export default ({ history, post, user }) => {
                     {post.title}
                 </Link>
             </h3>
-            <div className="post__author">Submitted by {user.username}</div>
+            <div className="post__author">Submitted by {user.username} in topic <strong>{topic.name}</strong></div>
             {LoggedInUserButtons()}
         </section>
     }
