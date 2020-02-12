@@ -57,7 +57,7 @@ export default (props) => {
 
           <Button id="CreatePostButton" color="secondary" variant="contained" onClick={() => props.history.push("/create")}>
             Submit a Post
-      </Button>
+          </Button>
 
           {
             sortedPostsArray.map(post => {
@@ -89,7 +89,7 @@ export default (props) => {
 
           <Button id="CreatePostButton" color="secondary" variant="contained" onClick={() => props.history.push("/create")}>
             Submit a Post
-        </Button>
+          </Button>
 
           {
             sortedPostsArray.map(post => {
@@ -123,7 +123,7 @@ export default (props) => {
 
             <Button id="CreatePostButton" color="secondary" variant="contained" onClick={() => props.history.push("/create")}>
               Submit a Post
-          </Button>
+            </Button>
 
             {
               sortArrayByMostRecent(filteredPostsByTopic).map(post => {

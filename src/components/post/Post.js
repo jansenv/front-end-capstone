@@ -3,6 +3,7 @@ import "./Post.css"
 import { PostContext } from "./PostProvider"
 import { Link } from "react-router-dom"
 import { Button } from "@material-ui/core"
+import Vote from "../votes/VoteButton"
 
 
 
@@ -32,6 +33,7 @@ export default ({ history, post, topic, user }) => {
     function RenderPosts() {
         return <section className="post">
             <p>{post.votes}</p>
+            <Vote />
             <img src={require(`../../images/${post.img}`)} />
             <h3 className="post__title">
                 <Link to={`/${post.id}`}>

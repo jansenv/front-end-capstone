@@ -49,7 +49,6 @@ export default props => {
                 description: postsArray.description,
                 code: postsArray.code,
                 timestamp: Date.now(),
-                votes: 0,
                 topicId: parseInt(postsArray.topicId),
                 userId: parseInt(localStorage.getItem("activeUser"))
             })
