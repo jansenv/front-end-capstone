@@ -39,13 +39,10 @@ export default (props) => {
   const filteredPostsByTopic = posts.filter(post => post.topicId === parseInt(postsObject.topicId)) || []
   // array vs. state
 
-  console.log(filteredPostsByTopic)
+  console.log(postsObject.topicId)
 
-
-
-  return (
-
-    <>
+  if (postsObject.topicId === undefined) {
+    return <>
 
       <main id="main">
         <div className="sidebar">
@@ -62,17 +59,82 @@ export default (props) => {
 
           <Button id="CreatePostButton" color="secondary" variant="contained" onClick={() => props.history.push("/create")}>
             Submit a Post
-          </Button>
+      </Button>
 
           {
-            sortArrayByMostRecent(filteredPostsByTopic).map(post => {
-            const foundedUser = users.find(u => u.id === post.userId) || {}
+            sortedPostsArray.map(post => {
+              const foundedUser = users.find(u => u.id === post.userId) || {}
 
-            return < Post key={post.id} post={post} user={foundedUser} {...props} />
-          })}
+              return < Post key={post.id} post={post} user={foundedUser} {...props} />
+            })}
         </div>
       </main>
 
     </>
-  )
+
+  } else if (postsObject.topicId === "1") {
+    return <>
+
+      <main id="main">
+        <div className="sidebar">
+          <h2>Directory</h2>
+          {
+            topics.map(topic => {
+              return <Button color="primary" variant="contained" key={topic.id} name="topicId" value={topic.id} onClick={handleControlledInputChange}>
+                {topic.name}
+              </Button>
+            })}
+        </div>
+
+        <div className="posts">
+
+          <Button id="CreatePostButton" color="secondary" variant="contained" onClick={() => props.history.push("/create")}>
+            Submit a Post
+        </Button>
+
+          {
+            sortedPostsArray.map(post => {
+              const foundedUser = users.find(u => u.id === post.userId) || {}
+
+              return < Post key={post.id} post={post} user={foundedUser} {...props} />
+            })}
+        </div>
+      </main>
+
+    </>
+  } else {
+
+    return (
+
+      <>
+
+        <main id="main">
+          <div className="sidebar">
+            <h2>Directory</h2>
+            {
+              topics.map(topic => {
+                return <Button color="primary" variant="contained" key={topic.id} name="topicId" value={topic.id} onClick={handleControlledInputChange}>
+                  {topic.name}
+                </Button>
+              })}
+          </div>
+
+          <div className="posts">
+
+            <Button id="CreatePostButton" color="secondary" variant="contained" onClick={() => props.history.push("/create")}>
+              Submit a Post
+          </Button>
+
+            {
+              sortArrayByMostRecent(filteredPostsByTopic).map(post => {
+                const foundedUser = users.find(u => u.id === post.userId) || {}
+
+                return < Post key={post.id} post={post} user={foundedUser} {...props} />
+              })}
+          </div>
+        </main>
+
+      </>
+    )
+  }
 }
