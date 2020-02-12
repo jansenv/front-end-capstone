@@ -34,7 +34,7 @@ export default ({ history, post, topic, user }) => {
         return <section className="post">
             <p>{post.votes}</p>
             <Vote />
-            <img src={require(`../../images/${post.img}`)} />
+            <img src={post.img} />
             <h3 className="post__title">
                 <Link to={`/${post.id}`}>
                     {post.title}

@@ -8,6 +8,8 @@ export default props => {
     const { posts, addPost, updatePost } = useContext(PostContext)
     const { topics } = useContext(TopicContext)
     const [postsArray, setPosts] = useState({})
+    const [image, setImage] = useState('')
+    const [loading, setLoading] = useState(false)
 
     const editMode = props.match.params.hasOwnProperty("postId")
 
@@ -16,6 +18,25 @@ export default props => {
         const newPosts = Object.assign({}, postsArray)
         newPosts[e.target.name] = e.target.value
         setPosts(newPosts)
+    }
+
+    const uploadImage = async e => {
+        const files = e.target.files
+        const data = new FormData()
+        data.append('file', files[0])
+        data.append('upload_preset', 'react-capstone')
+        setLoading(true)
+        const res = await fetch(
+            'http://api.cloudinary.com/v1_1/doemj2kcq/image/upload',
+            {
+                method: 'POST',
+                body: data
+            }
+        )
+        const file = await res.json()
+
+        setImage(file.secure_url)
+        setLoading(false)
     }
 
     const setDefaults = () => {
@@ -45,7 +66,7 @@ export default props => {
             addPost({
                 id: postsArray.id,
                 title: postsArray.title,
-                img: postsArray.img,
+                img: image,
                 description: postsArray.description,
                 code: postsArray.code,
                 timestamp: Date.now(),
@@ -87,12 +108,12 @@ export default props => {
             </fieldset>
             <fieldset>
                 <div className="form-group">
-                    <label htmlFor="img">image: </label>
-                    <input type="text" name="img" required className="form-control"
+                    <label htmlFor="img">upload image: </label>
+                    <input type="file" name="file" required className="form-control"
                         proptype="varchar"
-                        placeholder=""
+                        placeholder="Upload an image"
                         defaultValue={postsArray.img}
-                        onChange={handleControlledInputChange}
+                        onChange={uploadImage}
                     />
                 </div>
             </fieldset>
