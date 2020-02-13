@@ -6,23 +6,25 @@ body {
     display: flex;
     flex-direction: column;
     font-size: x-large;
-    margin: 0em 15em;
-    width: 1000px;
+    margin: 0em 16em;
 }
   
 .post {
     background-color: white;
+    border-radius: 5px;
     display: flex;
-    justify-content: space-evenly;
     margin: 1em;
     padding: 1em;
 }
 
 .postDiv {
-    align-items: center;
+    display: flex;
+    flex-direction: column;
     justify-content: center;
+    align-self: center;
+    align-content: center;
 }
 
-img {
+.post img {
     max-width: 450px
 }
