@@ -1,17 +1,21 @@
 .posts {
     display: flex;
     flex-direction: column;
-    margin: 0em 25em;
+    font-size: large;
+    margin: 0em 20em;
   }
   
-  .post {
-      justify-content: center;
-      display: flex;
-      margin: 1em;
-      padding: 1em;
-      border: 1px solid purple;
-  }
+.post {
+    border: 1px solid black;
+    margin: 1em;
+    padding: 1em;
+}
 
-  h2 {
-      align-self: center;
-  }
+.postDiv {
+    align-items: center;
+    justify-content: center;
+}
+
+img {
+    max-width: 500px
+}
