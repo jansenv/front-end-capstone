@@ -9,7 +9,7 @@ export default props => {
     const { topics } = useContext(TopicContext)
     const [postsArray, setPosts] = useState({})
     const [image, setImage] = useState('')
-    const [loading, setLoading] = useState(false)
+    const [setLoading] = useState(false)
 
     const editMode = props.match.params.hasOwnProperty("postId")
 

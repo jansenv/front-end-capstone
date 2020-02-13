@@ -5,7 +5,7 @@ import { CommentContext } from "../comments/CommentProvider"
 import { Button } from "@material-ui/core"
 
 export default (props) => {
-    const { comments, updateComment, deleteComment } = useContext(CommentContext)
+    const { comments, deleteComment } = useContext(CommentContext)
     const { posts } = useContext(PostContext)
     const { users } = useContext(UserContext)
 
@@ -38,7 +38,7 @@ export default (props) => {
     return (
         <section className="postDetails">
             <section className="post">
-                <img src={post.img} />
+                <img src={post.img} alt="just did this to get rid of the yellow message" />
                 <h3 className="post__title">
                     {post.title}
                 </h3>

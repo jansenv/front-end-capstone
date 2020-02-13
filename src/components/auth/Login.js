@@ -7,7 +7,6 @@ import { Button } from "@material-ui/core";
 const Login = props => {
     const username = useRef()
     const password = useRef()
-    const email = useRef()
 
     const existingUserCheck = () => {
         return fetch(`http://localhost:8088/users?username=${username.current.value}`)

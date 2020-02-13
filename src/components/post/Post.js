@@ -1,4 +1,4 @@
-import React, { useContext, useState, useEffect } from "react"
+import React, { useContext } from "react"
 import "./Post.css"
 import { PostContext } from "./PostProvider"
 import { Link } from "react-router-dom"
@@ -33,7 +33,7 @@ export default ({ history, post, topic, user }) => {
     function RenderPosts() {
         return <section className="post">
             <Vote />
-            <img src={post.img} />
+            <img src={post.img} alt="you mad" />
             <h3 className="post__title">
                 <Link to={`/${post.id}`}>
                     {post.title}
