@@ -45,7 +45,7 @@ export default (props) => {
 
       <main id="main">
         <div className="sidebar">
-          <h2>Directory</h2>
+          <h2>Topics</h2>
           {
             topics.map(topic => {
               return <Button color="primary" variant="contained" key={topic.id} name="topicId" value={topic.id} onClick={handleControlledInputChange}>
@@ -77,7 +77,7 @@ export default (props) => {
 
       <main id="main">
         <div className="sidebar">
-          <h2>Directory</h2>
+          <h2>Topics</h2>
           {
             topics.map(topic => {
               return <Button color="primary" variant="contained" key={topic.id} name="topicId" value={topic.id} onClick={handleControlledInputChange}>
@@ -111,7 +111,7 @@ export default (props) => {
 
         <main id="main">
           <div className="sidebar">
-            <h2>Directory</h2>
+            <h2>Topics</h2>
             {
               topics.map(topic => {
                 return <Button color="primary" variant="contained" key={topic.id} name="topicId" value={topic.id} onClick={handleControlledInputChange}>
