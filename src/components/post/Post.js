@@ -32,19 +32,21 @@ export default ({ history, post, topic, user }) => {
 
     function RenderPosts() {
         return <section className="post">
-            <div className="voteDiv">
-                <Vote />
-            </div>
             <div className="postDiv">
-            <img src={post.img} alt="there should be a pic here or something ain't right" />
+                <div className="post__author">Submitted by {user.username} in topic <strong>{topic.name}</strong></div>
                 <h3 className="post__title">
                     <Link to={`/${post.id}`}>
                         {post.title}
                     </Link>
                 </h3>
-                <div className="post__author">Submitted by {user.username} in topic <strong>{topic.name}</strong></div>
+                <Link to={`/${post.id}`}>
+                <img src={post.img} alt="there should be a pic here or something ain't right" />
+                </Link>
+                {LoggedInUserButtons()}
             </div>
-            {LoggedInUserButtons()}
+            <div className="voteDiv">
+                <Vote />
+            </div>
         </section>
     }
 

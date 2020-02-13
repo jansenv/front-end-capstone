@@ -17,10 +17,10 @@ class Vote extends React.Component {
         const { vote , score } = this.state
         return (
             <main>
-                <h1>{score + vote}</h1>
                 <Button color="primary" variant="contained" className={vote === 1 ? 'active' : undefined} onClick={() => this.vote(1)}>
                     Upvote
                 </Button>
+                <h1>{score + vote}</h1>
                 <Button color="primary" variant="contained" className={vote === -1 ? 'active' : undefined} onClick={() => this.vote(-1)}>
                     Downvote
                 </Button>
