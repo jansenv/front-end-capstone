@@ -37,7 +37,7 @@ export default (props) => {
 
     return (
         <section className="postDetails">
-            <section className="post">
+            <section className="postDetail">
                 <img src={post.img} alt="just did this to get rid of the yellow message" />
                 <h3 className="post__title">
                     {post.title}

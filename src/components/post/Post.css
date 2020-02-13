@@ -5,6 +5,8 @@
   }
   
   .post {
+      justify-content: center;
+      display: flex;
       margin: 1em;
       padding: 1em;
       border: 1px solid purple;

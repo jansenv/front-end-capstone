@@ -9,7 +9,6 @@ export default props => {
     const { topics } = useContext(TopicContext)
     const [postsArray, setPosts] = useState({})
     const [image, setImage] = useState('')
-    const [setLoading] = useState(false)
 
     const editMode = props.match.params.hasOwnProperty("postId")
 
@@ -25,7 +24,6 @@ export default props => {
         const data = new FormData()
         data.append('file', files[0])
         data.append('upload_preset', 'react-capstone')
-        setLoading(true)
         const res = await fetch(
             'http://api.cloudinary.com/v1_1/doemj2kcq/image/upload',
             {
@@ -36,7 +34,6 @@ export default props => {
         const file = await res.json()
 
         setImage(file.secure_url)
-        setLoading(false)
     }
 
     const setDefaults = () => {
@@ -89,7 +86,7 @@ export default props => {
                         name="topicId"
                         onChange={handleControlledInputChange}
                         required>
-                        <option>Please select a topic...</option>
+                        <option value="0">Please select a topic...</option>
                         {topics.map(topic =>
                             <option key={topic.id} value={topic.id}>{topic.name}</option>)}
                     </select>

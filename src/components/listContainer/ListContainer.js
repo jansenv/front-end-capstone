@@ -32,8 +32,6 @@ export default (props) => {
     */
     const newPost = Object.assign([], postsObject)
     newPost[evt.target.name] = evt.target.value
-    console.log(evt.target)
-    console.log(newPost)
     setPosts(newPost)
   }
 
