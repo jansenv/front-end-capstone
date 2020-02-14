@@ -3,6 +3,8 @@ import { PostContext } from "./PostProvider"
 import { UserContext } from "../users/UserProvider"
 import { CommentContext } from "../comments/CommentProvider"
 import { Button } from "@material-ui/core"
+import "./PostDetails.css"
+import CommentForm from "../comments/CommentForm"
 
 export default (props) => {
     const { comments, deleteComment } = useContext(CommentContext)
@@ -36,18 +38,21 @@ export default (props) => {
     })
 
     return (
-        <section className="postDetails">
-            <section className="postDetail">
-                <img src={post.img} alt="just did this to get rid of the yellow message" />
-                <h3 className="post__title">
-                    {post.title}
-                </h3>
-                <div className="post__author">Submitted by {userWhoPosted.username}</div>
-                <div className="post__description">Details: {post.description}</div>
-                <div className="post__code">Code: {post.code}</div>
-            </section>
-            <section className="comments">
-                {sortedComments}
+        <section className="detailsAndComments">
+            <section className="postDetails">
+                <section className="postDetail">
+                    <img src={post.img} alt="just did this to get rid of the yellow message" />
+                    <h3 className="post__title">
+                        {post.title}
+                    </h3>
+                    <div className="post__author">Submitted by {userWhoPosted.username}</div>
+                    <div className="post__description">Details: {post.description}</div>
+                    <div className="post__code">Code: {post.code}</div>
+                </section>
+                {<CommentForm {...props} />}
+                <section className="comments">
+                    {sortedComments}
+                </section>
             </section>
         </section>
     )

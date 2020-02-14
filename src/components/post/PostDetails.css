@@ -1,0 +1,8 @@
+.detailsAndComments {
+    display: flex;
+    font-size: x-large;
+}
+
+.postDetails img {
+    max-width: 450px;
+}

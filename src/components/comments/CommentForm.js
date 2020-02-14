@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useState } from "react"
 import { CommentContext } from "./CommentProvider"
 import { Button } from "@material-ui/core"
+import "./CommentForm.css"
 
 
 export default (props) => {

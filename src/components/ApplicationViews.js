@@ -34,9 +34,6 @@ export default (props) => {
                                 <Route exact path="/:postId(\d+)"
                                     render={props => <PostDetails {...props} />}
                                 />
-                                <Route exact path="/:postId(\d+)"
-                                    render={props => <CommentForm {...props} />}
-                                />
                                 <Route exact path="/editComment/:commentId(\d+)"
                                     render={props => <CommentForm {...props} />}
                                 />
