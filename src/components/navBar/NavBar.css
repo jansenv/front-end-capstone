@@ -4,7 +4,7 @@
     flex-wrap: nowrap;
     justify-content: left;
     margin: -90px -5px;
-    padding: 15px;
+    padding: 25px 0px;
     position: fixed;
     width: 100%;
 }
@@ -14,7 +14,13 @@
     list-style-type: none;
 }
 
+.navbar img {
+    position: fixed;
+    max-width: 150px;
+    margin-top: -24px;
+}
+
 #logOutButton {
     position: fixed;
-    margin: -0.6em 0em 0em 115em;
+    margin: -1.3em 0em 0em 115em;
   }
