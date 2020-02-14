@@ -54,7 +54,7 @@ export default (props) => {
 
         <div className="posts">
 
-          <Button id="CreatePostButton" variant="contained" onClick={() => props.history.push("/create")}>
+          <Button id="CreatePostButton" color="secondary" variant="contained" onClick={() => props.history.push("/create")}>
             Create a Post
           </Button>
 
@@ -86,7 +86,7 @@ export default (props) => {
 
         <div className="posts">
 
-          <Button id="CreatePostButton" variant="contained" onClick={() => props.history.push("/create")}>
+          <Button id="CreatePostButton" color="secondary" variant="contained" onClick={() => props.history.push("/create")}>
             Create a Post
           </Button>
 
@@ -120,7 +120,7 @@ export default (props) => {
 
           <div className="posts">
 
-            <Button id="CreatePostButton" variant="contained" onClick={() => props.history.push("/create")}>
+            <Button id="CreatePostButton" color="secondary" variant="contained" onClick={() => props.history.push("/create")}>
               Create a Post
             </Button>
 

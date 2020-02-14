@@ -5,7 +5,7 @@
 .sidebar{
     display: flex;
     flex-direction: column;
-    margin: -44px 250px;
+    margin: -43.5px 300px;
     position: fixed;
     width: 200px;
 }
@@ -13,6 +13,6 @@
 #CreatePostButton {
     position: fixed;
     height: 50px;
-    margin: 25em 55em;
+    margin: 22em 58em;
     width: 200px;
 }
