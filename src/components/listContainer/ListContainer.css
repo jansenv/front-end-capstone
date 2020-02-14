@@ -5,7 +5,7 @@
 .sidebar{
     display: flex;
     flex-direction: column;
-    margin: 0px 250px;
+    margin: 50px 250px;
     position: fixed;
     width: 200px;
 }

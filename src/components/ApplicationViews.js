@@ -21,17 +21,7 @@ export default (props) => {
                     <TopicProvider>
                         <UserProvider>
                             <PostProvider>
-                                {
-                                    localStorage.getItem("activeUser")
-                                        ? <Button id="logOutButton" variant="contained" className="logout__link"
-                                                to=""
-                                                component={Link}
-                                                onClick={e => {
-                                                    e.preventDefault()
-                                                    localStorage.removeItem("activeUser")
-                                                    props.history.push("/")
-                                                }}>Sign Out
-                                        </Button> : ""}
+                                
                                 <Route exact path="/"
                                     render={props => <ListContainer {...props} />}
                                 />

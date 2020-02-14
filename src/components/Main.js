@@ -4,6 +4,7 @@ import ApplicationViews from "./ApplicationViews"
 import "./Main.css"
 import Register from "./auth/Register"
 import Login from "./auth/Login"
+import NavBar from "./navBar/NavBar"
 
 export default () => (
     <>
@@ -11,6 +12,7 @@ export default () => (
             if (localStorage.getItem("activeUser")) {
                 return (
                     <>
+                        <Route render={props => <NavBar {...props} />} />
                         <Route render={props => <ApplicationViews {...props} />} />
                     </>
                 )
