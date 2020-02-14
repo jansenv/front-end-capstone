@@ -6,7 +6,7 @@ body {
     display: flex;
     flex-direction: column;
     font-size: x-large;
-    margin: 0em 20em;
+    margin: 90px 450px 0px 475px;
 }
   
 .post {
@@ -29,6 +29,7 @@ body {
     justify-content: center;
     align-self: center;
     align-content: center;
+    margin-top: 5px;
 }
 
 .voteDiv {

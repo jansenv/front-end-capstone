@@ -3,7 +3,7 @@
     display: flex;
     flex-wrap: nowrap;
     justify-content: left;
-    margin: -8px -5px;
+    margin: -90px -5px;
     padding: 15px;
     position: fixed;
     width: 100%;
@@ -16,5 +16,5 @@
 
 #logOutButton {
     position: fixed;
-    margin: 2em 0em 0em 115em;
+    margin: -0.6em 0em 0em 115em;
   }
