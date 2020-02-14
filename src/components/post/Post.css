@@ -1,20 +1,26 @@
 body {
-    background-color: lightgray;
+    background-color: #DAE0E6;
 }
 
 .posts {
     display: flex;
     flex-direction: column;
     font-size: x-large;
-    margin: 0em 16em;
+    margin: 0em 20em;
 }
   
 .post {
     background-color: white;
     border-radius: 5px;
+    border: 1px solid black;
     display: flex;
     margin: 1em;
-    padding: 1em;
+    padding: 0.5em 0.5em;
+    justify-content: space-between;
+}
+
+.post img {
+    max-width: 450px
 }
 
 .postDiv {
@@ -25,6 +31,7 @@ body {
     align-content: center;
 }
 
-.post img {
-    max-width: 450px
+.voteDiv {
+    align-self: center;
+    margin-right: 55px;
 }

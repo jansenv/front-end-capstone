@@ -33,7 +33,8 @@ export default ({ history, post, topic, user }) => {
     function RenderPosts() {
         return <section className="post">
             <div className="postDiv">
-                <div className="post__author">Submitted by {user.username} in topic <strong>{topic.name}</strong></div>
+                <div className="post__topic">topic: <strong>{topic.name}</strong></div>
+                <div className="post__author">Posted by {user.username}</div>
                 <h3 className="post__title">
                     <Link to={`/${post.id}`}>
                         {post.title}
