@@ -16,8 +16,8 @@
 
 .navbar img {
     position: fixed;
-    max-width: 150px;
-    margin-top: -24px;
+    max-width: 200px;
+    margin: -20px 5px;
 }
 
 #logOutButton {
