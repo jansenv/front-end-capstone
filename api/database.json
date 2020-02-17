@@ -23,72 +23,276 @@
       "password": "ll",
       "username": "Lemur_Leah",
       "id": 4
+    },
+    {
+      "email": "choortlehort@gmail.com",
+      "password": "sb",
+      "username": "choortlehort",
+      "id": 5
+    },
+    {
+      "email": "magicmac@gmail.com",
+      "password": "mg",
+      "username": "MagicMac",
+      "id": 6
+    },
+    {
+      "email": "coffeymay@gmail.com",
+      "password": "cm",
+      "username": "CoffeyMay",
+      "id": 7
+    },
+    {
+      "email": "holden@runescape.com",
+      "password": "hp",
+      "username": "RunescapeHolden",
+      "id": 8
+    },
+    {
+      "email": "Onterio@Barbershop.com",
+      "password": "ow",
+      "username": "OnterioTheBarber",
+      "id": 9
+    },
+    {
+      "email": "namita@gmail.com",
+      "password": "nm",
+      "username": "QueLePasaANamita",
+      "id": 10
+    },
+    {
+      "email": "wggreen@gmail.com",
+      "password": "wg",
+      "username": "WilliamG",
+      "id": 11
     }
   ],
   "posts": [
     {
-      "id": 1,
       "title": "look at my cat",
-      "img": "willy-cat.jpg",
+      "img": "https://res.cloudinary.com/doemj2kcq/image/upload/v1581533472/react-capstone/kcebsaci6rpgxa1o0ero.jpg",
       "description": "it's my cat",
       "code": "n/a",
-      "timestamp": 1581008245319,
-      "topicId": 3,
-      "userId": 1
+      "timestamp": 1581533476973,
+      "votes": 0,
+      "topicId": 14,
+      "userId": 1,
+      "id": 1
     },
     {
+      "title": "Cool font styling!",
+      "img": "https://res.cloudinary.com/doemj2kcq/image/upload/v1581533551/react-capstone/o9kl6n2nziqod7fytzxw.png",
+      "description": "Made this for my Glassdale project.",
+      "timestamp": 1581533560586,
+      "topicId": 5,
+      "userId": 2,
+      "votes": 0,
       "id": 2,
-      "title": "cool font styling!",
-      "img": "font-styling.png",
-      "description": "made this for my glassdale project",
-      "code": "h1 {\n    line-height: 0rem;\n    letter-spacing: .85rem;\n    font-family: OpenSans;\n    font-weight: 600;\n    text-align: center;\n    font-size: 5em;\n    color: #FFFFFF;\n    background: #232323;\n    text-shadow: 0 0 5px rgb(199, 114, 114),\n        0 0 5px #FFF,\n        0 0 5px #FFF,\n        0 0 20px #0C317A,\n        0 0 10px #0C317A,\n        0 0 40px #0C317A,\n        0 0 55px #0C317A,\n        0 0 75px #0C317A;\n}",
-      "timestamp": 1581087163561,
-      "topicId": 2,
-      "userId": 2
+      "code": "h1 {\n    line-height: 0rem;\n    letter-spacing: .85rem;\n    font-family: OpenSans;\n    font-weight: 600;\n    text-align: center;\n    font-size: 5em;\n    color: #FFFFFF;\n    background: #232323;\n    text-shadow: 0 0 5px rgb(199, 114, 114),\n        0 0 5px #FFF,\n        0 0 5px #FFF,\n        0 0 20px #0C317A,\n        0 0 10px #0C317A,\n        0 0 40px #0C317A,\n        0 0 55px #0C317A,\n        0 0 75px #0C317A;\n}"
     },
     {
-      "id": 3,
-      "title": "Just adopted this CUTE Lemur!",
-      "img": "lemur.jpg",
+      "title": "Just adopted this CUTE lemur!",
+      "img": "https://res.cloudinary.com/doemj2kcq/image/upload/v1581533925/react-capstone/bfmuzeacbqwhrcju9upm.jpg",
       "description": "We saw him on this tree in Madagascar and just had to take him home with us.",
       "code": "n/a",
-      "timestamp": 1581133155706,
+      "timestamp": 1581533941436,
+      "votes": 0,
+      "topicId": 14,
+      "userId": 4,
+      "id": 3
+    },
+    {
+      "title": "I wear these glasses because I can't C# !!!",
+      "img": "https://res.cloudinary.com/doemj2kcq/image/upload/v1581697958/react-capstone/dv1qfm22uyeffbiwe1zp.jpg",
+      "timestamp": 1581697968443,
+      "topicId": 2,
+      "userId": 5,
+      "id": 4
+    },
+    {
+      "title": "my fake plant died :(",
+      "img": "https://res.cloudinary.com/doemj2kcq/image/upload/v1581698094/react-capstone/y2qyepyaz3ylmsnujglo.jpg",
+      "description": "i did not pretend to water it",
+      "code": "n/a",
+      "timestamp": 1581698102521,
       "topicId": 3,
-      "userId": 4
+      "userId": 6,
+      "id": 5
+    },
+    {
+      "title": "Coffee on Coffey #Coffeyception",
+      "img": "https://res.cloudinary.com/doemj2kcq/image/upload/v1581699148/react-capstone/cl8kbogozoeugf2bke8f.png",
+      "description": "word",
+      "code": "n/a",
+      "timestamp": 1581699158284,
+      "topicId": 4,
+      "userId": 7,
+      "id": 6
+    },
+    {
+      "title": "Once you've seen one shopping center, you've seen the mall.",
+      "img": "https://res.cloudinary.com/doemj2kcq/image/upload/v1581699689/react-capstone/nti5h0kzf0mttnmh9024.jpg",
+      "timestamp": 1581699693077,
+      "topicId": 6,
+      "userId": 5,
+      "id": 7
+    },
+    {
+      "title": "I was wondering why the baseball was getting bigger. Then it hit me.",
+      "img": "https://res.cloudinary.com/doemj2kcq/image/upload/v1581699714/react-capstone/iewz3forczgcosqkhvxq.jpg",
+      "timestamp": 1581699715859,
+      "topicId": 6,
+      "userId": 5,
+      "id": 8
+    },
+    {
+      "title": "I read an interesting book about the History of Glue last night. I just couldn't put it down.",
+      "img": "https://res.cloudinary.com/doemj2kcq/image/upload/v1581699767/react-capstone/qjqfskipwtcudb8l8cbv.jpg",
+      "timestamp": 1581699770921,
+      "topicId": 6,
+      "userId": 5,
+      "id": 9
+    },
+    {
+      "title": "how i beat 1000 frost dragons with a blow dart",
+      "img": "https://res.cloudinary.com/doemj2kcq/image/upload/v1581699971/react-capstone/ngt20byzufgu4cdv5sqn.jpg",
+      "description": "hit 'em with the darts",
+      "code": "n/a",
+      "timestamp": 1581700045026,
+      "topicId": 7,
+      "userId": 8,
+      "id": 10
+    },
+    {
+      "title": "check out the seagate hard drive if you need that extra storage",
+      "img": "https://res.cloudinary.com/doemj2kcq/image/upload/v1581700435/react-capstone/d3qpcwbmbuc9jjrevbla.jpg",
+      "description": "get the 512 gb",
+      "timestamp": 1581700443806,
+      "topicId": 8,
+      "userId": 9,
+      "id": 11
+    },
+    {
+      "title": "HTML tag cheat sheet",
+      "img": "https://res.cloudinary.com/doemj2kcq/image/upload/v1581700573/react-capstone/hmzknmwn8mdfcyuzcucs.jpg",
+      "description": "very useful",
+      "code": "see above",
+      "timestamp": 1581700581381,
+      "topicId": 9,
+      "userId": 10,
+      "id": 12
+    },
+    {
+      "title": "making the CRAZIEST time format EVER",
+      "img": "https://res.cloudinary.com/doemj2kcq/image/upload/v1581701116/react-capstone/bqqr6bb909ijk3xosmkf.png",
+      "description": "this will format your date real nice",
+      "code": "const formatDateTime = (dateValue) => {\n        let formattedDate = new Date(dateValue).toString()\n        console.log(`formattedDate is ${formattedDate}`)\n        formattedDate = formattedDate.split(\" \")\n        switch (formattedDate[0]) {\n            case \"Sun\":\n                formattedDate[0] = \"Sunday,\";\n                break;\n            case \"Mon\":\n                formattedDate[0] = \"Monday,\";\n                break;\n            case \"Tue\":\n                formattedDate[0] = \"Tuesday,\";\n                break;\n            case \"Wed\":\n                formattedDate[0] = \"Wednesday,\";\n                break;\n            case \"Thu\":\n                formattedDate[0] = \"Thursday,\";\n                break;\n            case \"Fri\":\n                formattedDate[0] = \"Friday,\";\n                break;\n            case \"Sat\":\n                formattedDate[0] = \"Saturday,\";\n                break;\n        }\n        switch (formattedDate[1]) {\n            case \"Jan\":\n                formattedDate[1] = \"January\";\n                break;\n            case \"Feb\":\n                formattedDate[1] = \"February\";\n                break;\n            case \"Mar\":\n                formattedDate[1] = \"March\";\n                break;\n            case \"Apr\":\n                formattedDate[1] = \"April\";\n                break;\n            case \"May\":\n                formattedDate[1] = \"May\";\n                break;\n            case \"Jun\":\n                formattedDate[1] = \"June\";\n                break;\n            case \"Jul\":\n                formattedDate[1] = \"July\";\n                break;\n            case \"Aug\":\n                formattedDate[1] = \"August\";\n                break;\n            case \"Sep\":\n                formattedDate[1] = \"September\";\n                break;\n            case \"Oct\":\n                formattedDate[1] = \"October\";\n                break;\n            case \"Nov\":\n                formattedDate[1] = \"November\";\n                break;\n            case \"Dec\":\n                formattedDate[1] = \"December\"\n                break;\n        }\n        let formattedTime = formattedDate[4].split(\":\")\n        let formattedHour = parseInt(formattedTime[0], 10)\n        if (formattedHour > 11) {\n            formattedHour -= 12\n            if (formattedHour === 0) {\n                formattedHour = 12\n            }\n            formattedTime[0] = formattedHour.toString()\n            formattedDate[5] = \"PM\"\n        } else {\n            formattedDate[5] = \"AM\"\n        }\n        formattedDate[4] = formattedTime.slice(0, 2).join(\":\")\n        formattedDate[4] = \" at \" + formattedDate[4]\n        formattedDate = formattedDate.slice(0, 6).join(\" \")\n        return formattedDate\n    }",
+      "timestamp": 1581701127934,
+      "topicId": 10,
+      "userId": 11,
+      "id": 13
     }
   ],
   "topics": [
     {
       "id": 1,
-      "name": "all"
+      "name": "ALL"
     },
     {
       "id": 2,
-      "name": "css"
+      "name": "C#"
     },
     {
       "id": 3,
-      "name": "pets"
+      "name": "CAPSTONES"
+    },
+    {
+      "id": 4,
+      "name": "COFFEE"
+    },
+    {
+      "id": 5,
+      "name": "CSS"
+    },
+    {
+      "id": 6,
+      "name": "DADJOKES"
+    },
+    {
+      "id": 7,
+      "name": "GAMES"
+    },
+    {
+      "id": 8,
+      "name": "HARDWARE"
+    },
+    {
+      "id": 9,
+      "name": "HTML"
+    },
+    {
+      "id": 10,
+      "name": "JAVASCRIPT"
+    },
+    {
+      "id": 11,
+      "name": "JOBS"
+    },
+    {
+      "id": 12,
+      "name": "MUSIC"
+    },
+    {
+      "id": 13,
+      "name": "NSS"
+    },
+    {
+      "id": 14,
+      "name": "PETS"
+    },
+    {
+      "id": 15,
+      "name": "POLITICS"
+    },
+    {
+      "id": 16,
+      "name": "PYTHON"
+    },
+    {
+      "id": 17,
+      "name": "RANDOM"
+    },
+    {
+      "id": 18,
+      "name": "REACT"
+    },
+    {
+      "id": 19,
+      "name": "SOCIAL"
+    },
+    {
+      "id": 20,
+      "name": "TERMINAL"
     }
   ],
   "comments": [
     {
-      "id": 1,
-      "text": "i'm mr. freshwater",
       "userId": 2,
-      "postId": 1
+      "text": "i'm garrett",
+      "postId": 1,
+      "id": 1
     },
     {
-      "id": 2,
-      "text": "i'm willy",
-      "userId": 1,
-      "postId": 2
-    },
-    {
-      "id": 3,
-      "text": "i'm leah",
       "userId": 4,
-      "postId": 2
+      "text": "i'm leah",
+      "postId": 1,
+      "id": 2
+    },
+    {
+      "userId": 3,
+      "text": "please move this to the Dad Jokes channel",
+      "postId": 4,
+      "id": 3
     }
   ]
 }
