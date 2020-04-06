@@ -50,7 +50,6 @@ export default (props) => {
             <h2 className="commentForm__title">{editMode ? "Edit Comment" : "Add Comment"}</h2>
             <fieldset>
                 <div className="form-group">
-                    <label htmlFor="commentArea">Comment: </label>
                     <textarea
                         name="commentArea"
                         required
@@ -72,7 +71,7 @@ export default (props) => {
                     }
                 }}
                 className="btn btn-primary">
-                {editMode ? "Update Comment" : "Add Comment"}
+                {editMode ? "Submit" : "Submit"}
             </Button>
 
         </form>

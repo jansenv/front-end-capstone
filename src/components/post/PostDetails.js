@@ -49,10 +49,11 @@ export default (props) => {
                     <div className="post__description">Details: {post.description}</div>
                     <div className="post__code">Code: {post.code}</div>
                 </section>
-                {<CommentForm {...props} />}
+                <h2>Comments</h2>
                 <section className="comments">
                     {sortedComments}
                 </section>
+                {<CommentForm {...props} />}
             </section>
         </section>
     )
