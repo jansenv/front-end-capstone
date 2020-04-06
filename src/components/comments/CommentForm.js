@@ -47,7 +47,7 @@ export default (props) => {
 
     return (
         <form className="commentForm">
-            <h2 className="commentForm__title">{editMode ? "Edit Comment" : "Add Comment"}</h2>
+            <h3 className="commentForm__title">{editMode ? "Edit Comment" : "Add Comment"}</h3>
             <fieldset>
                 <div className="form-group">
                     <textarea
